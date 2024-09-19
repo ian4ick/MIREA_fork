@@ -5,6 +5,13 @@ public class Car {
     private String insuranceNumber;
     protected String engineType;
 
+    public void gas(){
+        if (this instanceof ElectricCar)
+            setEngineType("Quite Gas");
+        else
+            System.out.println("Loud Gas");
+    }
+
     public Car(String ownerName, String insuranceNumber, String engineType) {
         this.ownerName = ownerName;
         this.insuranceNumber = insuranceNumber;

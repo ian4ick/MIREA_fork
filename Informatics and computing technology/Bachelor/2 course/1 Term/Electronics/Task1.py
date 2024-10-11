@@ -1,5 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from IPython.core.display import HTML
+from IPython.display import display, Math
+from PIL.ImageOps import scale
+
+
+EPS = 4
+OUTPUT_LENGTH = 10
+SCALE = 5
 
 
 def delta1(i1, i2):
@@ -30,13 +38,11 @@ def print_graphing(x, y, name_graphing="", name_x="x", name_y="y"):
     plt.show()
 
 
-EPS = 4
-OUTPUT_LENGTH = 10
+
 
 
 class MyTask:
     def __init__(self):
-        # TODO PUT HERE YOUR DATA
         """Input Data"""
         self.E = [-11, 7]
         self.R = [407, 46, 138, 295, 241, 337, 123]
@@ -83,7 +89,7 @@ class MyTask:
             self.I2.append(my_round(C[i], EPS))
 
     def _1_1(self):
-        print("Task 1.1")
+        print("\nTask 1.1")
 
         self.fill_i()
         print("   I1" + " " * OUTPUT_LENGTH + "I2" + " " * OUTPUT_LENGTH + "I3'" + " " * OUTPUT_LENGTH +
@@ -115,15 +121,20 @@ class MyTask:
     def _2(self):
         print("\nTask 2")
         Rvh2 = my_round(self.Uxx / self.Ikz, EPS)
-        print("R'вх = Uxx/Ikz =", self.Uxx, "/", self.Ikz, "=", Rvh2)
+        display(Math(f"R'вх = $$\\frac{{Uxx}}{{Ikz}} = $$\\frac{{{self.Uxx}}}{{{self.Ikz}}} = {Rvh2}  Ом"), metadata={'scale': SCALE})
+        display(HTML("<br>"))
         R15 = my_round(self.R[0]*self.R[4]/(self.R[0]+self.R[4]), EPS)
-        print("R15 = R1*R5/(R1+R5)=", R15)
+        display(Math(f"R_{{R15}} = $$\\frac{{R_{{1}} * R_{{5}}}}{{R_{{1}}+R_{{5}}}} = {R15}  Ом"), metadata={'scale': SCALE})
+        display(HTML("<br>"))
         R1345 = my_round(R15 + self.R[2] + self.R[3], EPS)
-        print("R1345 = R15 + R3 + R4 =", R1345)
+        display(Math(f"R_{{1345}} = R_{{15}} + R_3 + R_4 = {R1345}"))
+        display(HTML("<br>"))
         R13456 = my_round(R1345 * self.R[5] / (R1345 + self.R[5]), EPS)
-        print("R13456 = R1345 * R6 / (R1345 + R6) =", R13456)
+        display(Math(f"R_{{13456}} = \\frac{{R_{{1345}} \\cdot R_6}}{{R_{{1345}} + R_6}} = {R13456}"))
+        display(HTML("<br>"))
         Rvh3 = my_round(R13456 + self.R[1] + self.R[6], EPS)
-        print("R'''вх =", Rvh3)
+        display(Math(f"R'''_{{вх}} = R_{{13456}} + R_1 + R_6 = {Rvh3}"))
+        display(HTML("<br>"))
         print("R'вх      R''вх     R'''вх")
         print(Rvh2, self.R_exp2, Rvh3)
         print("R'вх      R''вх")
@@ -143,7 +154,6 @@ class MyTask:
         print_graphing(self.Rn, P, "P/Rn", "Rн", "P")
 
     def print_all(self):
-        plt.close('all')
         self._1_1()
         self._1_2()
         self._2()
@@ -151,4 +161,5 @@ class MyTask:
 
 
 my = MyTask()
-# my.print_all()
+
+# TODO LAUNCH 1.pynb!!!

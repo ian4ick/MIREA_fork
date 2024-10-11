@@ -116,6 +116,7 @@ class MyTask:
         print("\nTask 2")
         Rvh2 = my_round(self.Uxx / self.Ikz, EPS)
         print("R'вх = Uxx/Ikz =", self.Uxx, "/", self.Ikz, "=", Rvh2)
+<<<<<<< HEAD
         R15 = my_round(self.R[0]*self.R[4]/(self.R[0]+self.R[4]), EPS)
         print("R15 = R1*R5/(R1+R5)=", R15)
         R1345 = my_round(R15 + self.R[2] + self.R[3], EPS)
@@ -126,6 +127,10 @@ class MyTask:
         print("R'''вх =", Rvh3)
         print("R'вх      R''вх     R'''вх")
         print(Rvh2, self.R_exp2, Rvh3)
+=======
+        print("R'вх      R''вх")
+        print(Rvh2, self.R_exp2)
+>>>>>>> origin/main
 
     '''Task 3'''
 

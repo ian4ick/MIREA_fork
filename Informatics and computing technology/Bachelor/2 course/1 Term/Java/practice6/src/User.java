@@ -34,7 +34,7 @@ public class User {
         return true;
     }
 
-    public void setName(String name) {
+    public void setName(String name) {  
         if (isCorrect(name, "Name")) {
             this.name = name;
         }

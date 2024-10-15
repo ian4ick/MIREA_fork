@@ -1,3 +1,0 @@
-D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/7.dir
-D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

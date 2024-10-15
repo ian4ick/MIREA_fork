@@ -75,15 +75,15 @@ class MyTask:
             [0, 1, 0],
             [1, 0, -1]])
 
-        B = np.array([self.I3[0], self.I3[0] - self.I3[2], -self.I3[1]])
+        B = np.array([self.I3[0], self.I3[0] + self.I3[2], -self.I3[1]])
         C = np.linalg.solve(A, B)
         for i in range(3):
             self.I3.append(my_round(C[i], EPS))
-        B = np.array([self.I1[0], self.I1[0] - self.I1[2], -self.I1[1]])
+        B = np.array([self.I1[0], self.I1[0] + self.I1[2], -self.I1[1]])
         C = np.linalg.solve(A, B)
         for i in range(3):
             self.I1.append(my_round(C[i], EPS))
-        B = np.array([self.I2[0], self.I2[0] - self.I2[2], -self.I2[1]])
+        B = np.array([self.I2[0], self.I2[0] + self.I2[2], -self.I2[1]])
         C = np.linalg.solve(A, B)
         for i in range(3):
             self.I2.append(my_round(C[i], EPS))

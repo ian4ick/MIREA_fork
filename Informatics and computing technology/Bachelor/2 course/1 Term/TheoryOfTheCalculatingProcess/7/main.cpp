@@ -62,56 +62,147 @@ public:
         this->level = tree->level;
     }
     void ll() {
-        Tree* curr = new Tree(this);
-        this->key = this->left->key;
-        this->value = this->left->value;
-        this->left = new Tree(this->left->left);
+        Tree* l = new Tree(this->left->left);
+        Tree* r = new Tree(this);
+        Tree* curr = new Tree(this->left);
+        this->key = curr->key;
+        this->value = curr->value;
+        this->right = new Tree(r->key, r->value);
+        this->right->parent = this;
+        if (r->right != nullptr) {
+            this->right->right = r->right;
+            this->right->right->parent = this->right;
+        }
+        if (curr->right != nullptr) {
+            this->right->left = curr->right;
+            this->right->left->parent = this->right;
+        }
+
+        this->left = new Tree(l->key, l->value);
         this->left->parent = this;
-        this->right = this->left->right;
-        this->level = this->left->level;
-        this->parent = curr->parent;
-        curr->parent = this;
-        curr->left = nullptr;
-        this->right = curr;
+        if (l->left != nullptr) {
+            this->left->left = l->left;
+            this->left->left->parent = this->left;
+        }
+        if (l->right != nullptr) {
+            this->left->right = l->right;
+            this->left->right->parent = this->left;
+        }
 
 
+        /*this->key = curr->key;
+        this->value = curr->value;
+        this->left->key = l->key;
+        this->left->value = l->value;
+        this->left->level = l->level;
+        this->left->parent = this;
+        this->level = curr->level;
+        r->parent = this;
+        this->right = r;*/
     }
     void rr() {
-        Tree* curr = new Tree(this);
+        Tree* r = new Tree(this->right->right);
+        Tree* l = new Tree(this);
+        Tree* curr = new Tree(this->right);
+        this->key = curr->key;
+        this->value = curr->value;
+        this->left = new Tree(l->key, l->value);
+        this->left->parent = this;
+        if (l->left != nullptr) {
+            this->left->left = l->left;
+            this->left->left->parent = this->left;
+        }
+        if (curr->left != nullptr) {
+            this->left->right = curr->left;
+            this->left->right->parent = this->left;
+        }
+
+        this->right = new Tree(r->key, r->value);
+        this->right->parent = this;
+        if (r->right != nullptr) {
+            this->right->right = r->right;
+            this->right->right->parent = this->right;
+        }
+        if (r->left != nullptr) {
+            this->right->left = r->left;
+            this->right->left->parent = this->right;
+        }
+
+
+
+        /*Tree* curr = new Tree(this);
+        if (curr->right != nullptr) {
+            curr->right = new Tree(this->right->left);
+            curr->right->parent = curr;
+        }
         this->key = this->right->key;
         this->value = this->right->value;
         this->right = new Tree(this->right->right);
         this->right->parent = this;
-        this->left = this->right->left;
         this->level = this->right->level;
-        this->parent = curr->parent;
         curr->parent = this;
-        curr->right = nullptr;
-        this->left = curr;
+        this->left = curr;*/
     }
     void lr() {
-        Tree* temp = new Tree(this->left);
-        Tree* curr = new Tree(this->left->right);
-        this->left->key = curr->key;
-        this->left->value = curr->value;
-        this->left->right = nullptr;
-        this->left->left = temp;
+        /*
+         *Tree* l = new Tree(this->left);
+        Tree* r = new Tree(this->left->right);
+        this->left = new Tree(r->key, r->value);
+        this->left->parent = this;
+        if (r->right != nullptr) {
+            this->left->right = r->right;
+            this->left->right->parent = this->left;
+        }
+        this->left->left = new Tree(l->key, l->value);
         this->left->left->parent = this->left;
-        this->left->left->left = nullptr;
-        this->left->left->right = nullptr;
-        this->ll();
+        if (l->left != nullptr) {
+            this->left->left->left = l->left;
+            this->left->left->left->parent = this->left->left;
+        }
+        if (l->right != nullptr) {
+            this->left->left->right = r->left;
+            this->left->left->right->parent = this->left;
+        }*/
+        if (this->left->right->right != nullptr) {
+            this->left->rr();
+        }
+        else {
+            Tree* temp = new Tree(this->left);
+            this->left = new Tree(this->left->right->key, this->left->right->value);
+            this->left->left = new Tree(temp->key, temp->value);
+            this->left->left->parent = this->left;
+        }
+        ll();
     }
     void rl() {
-        Tree* temp = new Tree(this->right);
-        Tree* curr = new Tree(this->right->left);
-        this->right->key = curr->key;
-        this->right->value = curr->value;
-        this->right->left = nullptr;
-        this->right->right = temp;
+        /*Tree* r = new Tree(this->right);
+        Tree* l = new Tree(this->right->left);
+        this->right = new Tree(l->key, l->value);
+        this->right->parent = this;
+        if (l->left != nullptr) {
+            this->right->left = l->left;
+            this->right->left->parent = this->right;
+        }
+        this->right->right = new Tree(r->key, r->value);
         this->right->right->parent = this->right;
-        this->right->right->right = nullptr;
-        this->right->right->left = nullptr;
-        this->rr();
+        if (r->right != nullptr) {
+            this->right->right->right = r->right;
+            this->right->right->right->parent = this->right->right;
+        }
+        if (r->left != nullptr) {
+            this->right->right->left = l->right;
+            this->right->right->left->parent = this->right;
+        }*/
+        if (this->right->left->left != nullptr) {
+            this->right->ll();
+        }
+        else {
+            Tree* temp = new Tree(this->right);
+            this->right = new Tree(this->right->left->key, this->right->left->value);
+            this->right->right = new Tree(temp->key, temp->value);
+            this->right->right->parent = this->right;
+        }
+        rr();
     }
 
     void insert(int k, T v) {
@@ -137,9 +228,52 @@ public:
                 this->right->insert(k, v);
             }
         }
-
-
     }
+    T remove(int k) {
+        Tree* temp = this;
+        while (temp!=nullptr && temp->key != k) {
+            if (temp->key > k) {
+                temp = temp->left;
+            }
+            else if(temp->key < k) {
+                temp = temp->right;
+            }
+        }
+        if (temp==nullptr)
+            return T();
+
+        if (temp->left != nullptr) {
+            Tree* curr = temp->left;
+            while (curr->right!=nullptr) {
+                curr = curr->right;
+            }
+            temp->key = curr->key;
+            temp->value = curr->value;
+            (curr->parent->left == curr) ? curr->parent->left = nullptr : curr->parent->right = nullptr;
+            delete curr;
+            balanceTree(temp);
+            return temp->value;
+        }
+        if (temp->right != nullptr) {
+            temp->key = temp->right->key;
+            temp->value = temp->right->value;
+            temp->right = new Tree(temp->right->right);
+            temp->right->parent = temp->right;
+            balanceTree(temp);
+            return temp->value;
+        }
+        if (temp->parent == nullptr) {
+            this->key = -1;
+            this->value = T();
+            balanceTree(temp);
+            return T();
+        }
+        Tree* curr = temp;
+        (curr->parent->left == curr) ? curr->parent->left = nullptr : curr->parent->right = nullptr;
+        balanceTree(curr);
+        return temp->value;
+    }
+
     T getValue(int k) {
         if (key == k) {
             return this->value;
@@ -229,13 +363,38 @@ public:
     }
 
     void balanceTree(Tree* root) {
+        if (root == nullptr) {
+            return;
+        }
         Tree* temp_p = root;
         while (temp_p->parent != nullptr) {
             temp_p = temp_p->parent;
         }
         temp_p->updateLevels();
-        Tree* p = root->parent;
-        if (p == nullptr || p->parent == nullptr) {
+        int a = -1;
+        int b = -1;
+        (root->left == nullptr)? a = -1: a = root->left->level;
+        (root->right == nullptr)? b = -1: b = root->right->level;
+        if (a - b > 1) {
+            (root->left->left == nullptr)? a = -1: a = root->left->left->level;
+            (root->left->right == nullptr)? b = -1: b = root->left->right->level;
+            if (a > b)
+                root->ll();
+            else if (b > a)
+                root->lr();
+        }
+        else if (b - a > 1) {
+            (root->right->left == nullptr)? a = -1: a = root->right->left->level;
+            (root->right->right == nullptr)? b = -1: b = root->right->right->level;
+            if (a > b)
+                root->rl();
+            else if (b > a)
+                root->rr();
+        }
+        balanceTree(root->parent);
+
+        /*Tree* p = root->parent;
+        if (p == nullptr) {
             return;
         }
         if (p->left == root) {
@@ -251,6 +410,7 @@ public:
                     return;
                 }
             }
+
         }
         else if (p->right == root) {
             if (p->left == nullptr) {
@@ -267,7 +427,7 @@ public:
             }
         }
 
-
+        */
 
         /*if (this->left != nullptr) {
             if (this->left->left != nullptr && this->right == nullptr) {
@@ -295,6 +455,8 @@ public:
         }*/
     }
 };
+
+
 /*
 11
 5
@@ -308,15 +470,14 @@ public:
 9
 11
 10
-5
 
  */
 /*
 4
-1
 3
 2
 4
+1
  */
 int main() {
     int a, n;
@@ -331,6 +492,8 @@ int main() {
         tree->insert(a, s);
         tree->printTree();
     }
-
+    cin>>a;
+    tree->remove(a);
+    tree->printTree();
     return 0;
 }

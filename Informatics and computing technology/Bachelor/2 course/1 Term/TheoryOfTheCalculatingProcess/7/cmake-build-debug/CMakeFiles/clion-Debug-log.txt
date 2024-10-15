@@ -1,18 +1,32 @@
-"C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S "D:\Backup\Less Important\My programs\Git\MIREA\Informatics and computing technology\Bachelor\2 course\1 Term\TheoryOfTheCalculatingProcess\7" -B "D:\Backup\Less Important\My programs\Git\MIREA\Informatics and computing technology\Bachelor\2 course\1 Term\TheoryOfTheCalculatingProcess\7\cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S "D:\Backup\Less Important\My programs\Git\MIREA\Informatics and computing technology\Bachelor\2 course\1 Term\TheoryOfTheCalculatingProcess\7" -B "D:\Backup\Less Important\My programs\Git\MIREA\Informatics and computing technology\Bachelor\2 course\1 Term\TheoryOfTheCalculatingProcess\7\cmake-build-debug"
 -- The C compiler identification is GNU 13.1.0
 -- The CXX compiler identification is GNU 13.1.0
 -- Detecting C compiler ABI info
+CMake Warning in D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sfl9zi/CMakeLists.txt:
+  The object file directory
+
+    D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-sfl9zi/CMakeFiles/cmTC_cbd1e.dir/./
+
+  has 229 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    CMakeCCompilerABI.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
 -- Detecting C compiler ABI info - done
 -- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.2.2/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
-CMake Warning in D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mhmnqu/CMakeLists.txt:
+CMake Warning in D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-z1vksh/CMakeLists.txt:
   The object file directory
 
-    D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mhmnqu/CMakeFiles/cmTC_5052a.dir/
+    D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-z1vksh/CMakeFiles/cmTC_926e4.dir/./
 
-  has 227 characters.  The maximum full path to an object file is 250
+  has 229 characters.  The maximum full path to an object file is 250
   characters (see CMAKE_OBJECT_PATH_MAX).  Object file
 
     CMakeCXXCompilerABI.cpp.obj
@@ -25,6 +39,6 @@ CMake Warning in D:/Backup/Less Important/My programs/Git/MIREA/Informatics and 
 -- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.2.2/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (1.7s)
+-- Configuring done (1.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/Backup/Less Important/My programs/Git/MIREA/Informatics and computing technology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7/cmake-build-debug

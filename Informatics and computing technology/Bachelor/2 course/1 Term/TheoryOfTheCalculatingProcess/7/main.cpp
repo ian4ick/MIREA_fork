@@ -1,33 +1,6 @@
 #include <functional>
 #include <iostream>
 #include <vector>
-/*
-11
-5
-e
-3
-c
-4
-d
-7
-h
-6
-f
-8
-i
-1
-a
-2
-b
-9
-j
-11
-l
-10
-k
-5
-
- */
 using namespace std;
 
 template <typename T>
@@ -88,17 +61,6 @@ public:
             this->left->right = l->right;
             this->left->right->parent = this->left;
         }
-
-
-        /*this->key = curr->key;
-        this->value = curr->value;
-        this->left->key = l->key;
-        this->left->value = l->value;
-        this->left->level = l->level;
-        this->left->parent = this;
-        this->level = curr->level;
-        r->parent = this;
-        this->right = r;*/
     }
     void rr() {
         Tree* r = new Tree(this->right->right);
@@ -127,42 +89,8 @@ public:
             this->right->left = r->left;
             this->right->left->parent = this->right;
         }
-
-
-
-        /*Tree* curr = new Tree(this);
-        if (curr->right != nullptr) {
-            curr->right = new Tree(this->right->left);
-            curr->right->parent = curr;
-        }
-        this->key = this->right->key;
-        this->value = this->right->value;
-        this->right = new Tree(this->right->right);
-        this->right->parent = this;
-        this->level = this->right->level;
-        curr->parent = this;
-        this->left = curr;*/
     }
     void lr() {
-        /*
-         *Tree* l = new Tree(this->left);
-        Tree* r = new Tree(this->left->right);
-        this->left = new Tree(r->key, r->value);
-        this->left->parent = this;
-        if (r->right != nullptr) {
-            this->left->right = r->right;
-            this->left->right->parent = this->left;
-        }
-        this->left->left = new Tree(l->key, l->value);
-        this->left->left->parent = this->left;
-        if (l->left != nullptr) {
-            this->left->left->left = l->left;
-            this->left->left->left->parent = this->left->left;
-        }
-        if (l->right != nullptr) {
-            this->left->left->right = r->left;
-            this->left->left->right->parent = this->left;
-        }*/
         if (this->left->right->right != nullptr) {
             this->left->rr();
         }
@@ -175,24 +103,6 @@ public:
         ll();
     }
     void rl() {
-        /*Tree* r = new Tree(this->right);
-        Tree* l = new Tree(this->right->left);
-        this->right = new Tree(l->key, l->value);
-        this->right->parent = this;
-        if (l->left != nullptr) {
-            this->right->left = l->left;
-            this->right->left->parent = this->right;
-        }
-        this->right->right = new Tree(r->key, r->value);
-        this->right->right->parent = this->right;
-        if (r->right != nullptr) {
-            this->right->right->right = r->right;
-            this->right->right->right->parent = this->right->right;
-        }
-        if (r->left != nullptr) {
-            this->right->right->left = l->right;
-            this->right->right->left->parent = this->right;
-        }*/
         if (this->right->left->left != nullptr) {
             this->right->ll();
         }
@@ -392,108 +302,44 @@ public:
                 root->rr();
         }
         balanceTree(root->parent);
-
-        /*Tree* p = root->parent;
-        if (p == nullptr) {
-            return;
-        }
-        if (p->left == root) {
-            if (p->right == nullptr) {
-                if (p->parent->left == p && p->parent->right == nullptr) {
-                    p->parent->ll();
-                    balanceTree(p->parent);
-                    return;
-                }
-                if (p->parent->right == p && p->parent->left == nullptr) {
-                    p->parent->rl();
-                    balanceTree(p->parent);
-                    return;
-                }
-            }
-
-        }
-        else if (p->right == root) {
-            if (p->left == nullptr) {
-                if (p->parent->right == p && p->parent->left == nullptr) {
-                    p->parent->rr();
-                    balanceTree(p->parent);
-                    return;
-                }
-                if (p->parent->left == p && p->parent->left == nullptr) {
-                    p->parent->lr();
-                    balanceTree(p->parent);
-                    return;
-                }
-            }
-        }
-
-        */
-
-        /*if (this->left != nullptr) {
-            if (this->left->left != nullptr && this->right == nullptr) {
-                this->ll();
-            }
-            else if(this->left->right != nullptr && this->right == nullptr) {
-                this->lr();
-            }
-            else {
-                this->left->balanceTree();
-                this->right->balanceTree();
-            }
-        }
-        if (this->right != nullptr) {
-            if (this->right->right != nullptr && this->left == nullptr) {
-                this->rr();
-            }
-            else if(this->right->left != nullptr && this->left == nullptr) {
-                this->rl();
-            }
-            else {
-                this->right->balanceTree();
-                this->left->balanceTree();
-            }
-        }*/
     }
 };
 
-
-/*
-11
-5
-3
-4
-7
-6
-8
-1
-2
-9
-11
-10
-
- */
-/*
-4
-3
-2
-4
-1
- */
 int main() {
-    int a, n;
-    string s="Debug";
-    cin>>n;
-    cin>>a;
-    //cin>>s;
-    auto* tree = new Tree(a, s);
-    for (int i = 1; i < n; i++) {
-        cin>>a;
-        //cin>>s;
-        tree->insert(a, s);
-        tree->printTree();
+    int a;
+    string s;
+    bool ok = true;
+    cout << "Enter initial key and value:" << endl;
+    cin >> a >> s;
+    cout << endl << "List of commands:" << endl;
+    cout << "1. Add <key> <value>" << endl;
+    cout << "2. Delete <key>" << endl;
+    cout << "3. PrintTree" << endl;
+    cout << "4. GetValue <key>" << endl;
+    cout << "5. Exit" << endl;
+    auto* tree = new Tree<string>(a,s);
+    while (ok) {
+        cin>>s;
+        if (s == "Add") {
+            cin>>a>>s;
+            tree->insert(a,s);
+        }
+        else if (s == "Delete") {
+            cin>>a;
+            tree->remove(a);
+        }
+        else if (s == "PrintTree") {
+            tree->printTree();
+        }
+        else if (s == "GetValue") {
+            cin>>a;
+            cout << tree->getValue(a);
+        }
+        else if (s == "Exit")
+                return 0;
+        else{
+                cout << "Enter valid-command again:" << endl;
+        }
+
     }
-    cin>>a;
-    tree->remove(a);
-    tree->printTree();
-    return 0;
 }

@@ -288,9 +288,9 @@ public:
         if (a - b > 1) {
             (root->left->left == nullptr)? a = -1: a = root->left->left->level;
             (root->left->right == nullptr)? b = -1: b = root->left->right->level;
-            if (a > b)
+            if (a >= b)
                 root->ll();
-            else if (b > a)
+            else// if (b > a)
                 root->lr();
         }
         else if (b - a > 1) {
@@ -298,7 +298,7 @@ public:
             (root->right->right == nullptr)? b = -1: b = root->right->right->level;
             if (a > b)
                 root->rl();
-            else if (b > a)
+            else// if (b > a)
                 root->rr();
         }
         balanceTree(root->parent);
@@ -307,10 +307,10 @@ public:
 
 int main() {
     int a;
-    string s;
+    string s = "DefaultA";
     bool ok = true;
     cout << "Enter initial key and value:" << endl;
-    cin >> a >> s;
+    cin >> a;// >> s;
     cout << endl << "List of commands:" << endl;
     cout << "1. Add <key> <value>" << endl;
     cout << "2. Delete <key>" << endl;
@@ -321,7 +321,8 @@ int main() {
     while (ok) {
         cin>>s;
         if (s == "Add") {
-            cin>>a>>s;
+            cin>>a;//>>s;
+            s = "Default";
             tree->insert(a,s);
         }
         else if (s == "Delete") {

@@ -23,11 +23,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454cd58f-9150-4d80-9609-81ba26ec86f6" name="Changes" comment="Added 7th practice TCP">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="454cd58f-9150-4d80-9609-81ba26ec86f6" name="Changes" comment="Fix 7th practice TCP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,8 +141,17 @@
       <workItem from="1729072328387" duration="358000" />
       <workItem from="1729074982385" duration="1918000" />
       <workItem from="1729076992301" duration="3000" />
-      <workItem from="1729480075375" duration="2195000" />
+      <workItem from="1729480075375" duration="2446000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix 7th practice TCP">
+      <option name="closed" value="true" />
+      <created>1729482533093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729482533093</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +161,10 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix 7th practice TCP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix 7th practice TCP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

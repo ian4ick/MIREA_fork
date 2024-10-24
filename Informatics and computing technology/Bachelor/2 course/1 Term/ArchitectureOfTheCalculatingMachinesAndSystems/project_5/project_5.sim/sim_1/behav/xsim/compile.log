@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/sync_dynam_doublestage_rs_trigger.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_dynam_doublestage_rs_trigger
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_dynam_doublestage_rs_trigger.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_sync_dynam_doublestage_rs_trigger

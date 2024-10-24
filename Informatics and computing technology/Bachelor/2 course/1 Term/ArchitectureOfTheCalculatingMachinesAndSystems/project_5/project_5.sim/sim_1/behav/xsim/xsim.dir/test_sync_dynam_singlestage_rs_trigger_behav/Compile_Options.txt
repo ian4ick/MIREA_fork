@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "test_sync_dynam_singlestage_rs_trigger_behav" "xil_defaultlib.test_sync_dynam_singlestage_rs_trigger" "xil_defaultlib.glbl" -log "elaborate.log" 

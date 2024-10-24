@@ -1,0 +1,21 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/study/projects_arch/project_5/project_5.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/d_d_rs.v,1729787880,verilog,,,,d_d_rs,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_async_singlestage_rs_trigger.v,1729803392,verilog,,,,test_async_singlestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_d_trigger.v,1729784898,verilog,,,,test_d_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_jk_trigger.v,1729787130,verilog,,,,test_jk_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_dynam_doublestage_rs_trigger.v,1729804288,verilog,,,,test_sync_dynam_doublestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_dynam_singlestage_rs_trigger.v,1729804016,verilog,,,,test_sync_dynam_singlestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_static_singlestage_rs_trigger.v,1729803675,verilog,,,,test_sync_static_singlestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_t_trigger.v,1729785779,verilog,,,,test_t_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/async_singlestage_rs_trigger.v,1729803219,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_async_singlestage_rs_trigger.v,,async_singlestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/d_trigger.v,1729784442,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_d_trigger.v,,d_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/jk_trigger.v,1729786416,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_jk_trigger.v,,jk_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/sync_dyn_doublestep_rs.v,1729780165,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/d_d_rs.v,,sync_dyn_doublestep_rs,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/sync_dynam_doublestage_rs_trigger.v,1729804177,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_dynam_doublestage_rs_trigger.v,,sync_dynam_doublestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/sync_dynam_singlestage_rs_trigger.v,1729803906,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_dynam_singlestage_rs_trigger.v,,sync_dynam_singlestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/sync_static_singlestage_rs_trigger.v,1729803583,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_sync_static_singlestage_rs_trigger.v,,sync_static_singlestage_rs_trigger,,,,,,,,
+D:/study/projects_arch/project_5/project_5.srcs/sources_1/new/t_trigger.v,1729785628,verilog,,D:/study/projects_arch/project_5/project_5.srcs/sim_1/new/test_t_trigger.v,,t_trigger,,,,,,,,

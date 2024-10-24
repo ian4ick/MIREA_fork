@@ -1,0 +1,7 @@
+Running: xsim.dir/test_async_singlestage_rs_trigger_behav/xsimk.exe -simmode gui -wdb test_async_singlestage_rs_trigger_behav.wdb -simrunnum 0 -socket 57813
+Design successfully loaded
+Design Loading Memory Usage: 9316 KB (Peak: 9316 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 9864 KB (Peak: 9864 KB)
+Simulation CPU Usage: 15 ms

@@ -1,7 +1,7 @@
-Running: xsim.dir/test_sync_dynam_doublestage_rs_trigger_behav/xsimk.exe -simmode gui -wdb test_sync_dynam_doublestage_rs_trigger_behav.wdb -simrunnum 0 -socket 57984
+Running: xsim.dir/test_sync_dynam_doublestage_rs_trigger_behav/xsimk.exe -simmode gui -wdb test_sync_dynam_doublestage_rs_trigger_behav.wdb -simrunnum 0 -socket 61082
 Design successfully loaded
-Design Loading Memory Usage: 9320 KB (Peak: 9320 KB)
+Design Loading Memory Usage: 8056 KB (Peak: 8056 KB)
 Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 9876 KB (Peak: 9876 KB)
+Simulation Memory Usage: 8628 KB (Peak: 8628 KB)
 Simulation CPU Usage: 0 ms

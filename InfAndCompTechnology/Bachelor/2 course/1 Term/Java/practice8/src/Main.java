@@ -20,15 +20,19 @@ public class Main {
                         synchronized (lock) {
                             if (currentNumber.get() == 0) {
                                 racer1.setDistance(new Random().nextInt(racer1.getDistance(), racer1.getDistance() + 30));
-                                System.out.print("Racer 1: " + racer1.getDistance() + " ");
+                                if (racer1.getDistance() >= FINISH_DISTANCE){
+                                    stopRace.incrementAndGet();
+                                    System.out.print("Racer 1: " + "Finished" + " ");
+                                }
+                                else
+                                    System.out.print("Racer 1: " + racer1.getDistance() + " ");
                                 if (stopRace.get() == 0)
                                     currentNumber.set(1);
                                 else{
                                     currentNumber.set(2);
                                     System.out.println();
                                 }
-                                if (racer1.getDistance() >= FINISH_DISTANCE)
-                                    stopRace.incrementAndGet();
+
                                 lock.notify();
                             }
                             else{
@@ -42,7 +46,6 @@ public class Main {
                             }
                         }
                     }
-                    System.out.println("\nRacer 1: " + "Finished" + " ");
                 }
         );
         Thread secondThread = new Thread(
@@ -52,10 +55,13 @@ public class Main {
                         synchronized (lock) {
                             if (currentNumber.get() == 1 || (currentNumber.get() % 3 == 0 && stopRace.get() == 1)) {
                                 racer2.setDistance(new Random().nextInt(racer2.getDistance(), racer2.getDistance() + 30));
-                                System.out.println("Racer 2: " + racer2.getDistance() + " ");
-                                currentNumber.set(2);
-                                if (racer2.getDistance() >= FINISH_DISTANCE)
+                                if (racer2.getDistance() >= FINISH_DISTANCE) {
                                     stopRace.incrementAndGet();
+                                    System.out.println("Racer 2: " + "Finished" + " ");
+                                }
+                                else
+                                    System.out.println("Racer 2: " + racer2.getDistance() + " ");
+                                currentNumber.set(2);
                                 lock.notify();
                             }
                             else{
@@ -69,7 +75,6 @@ public class Main {
                             }
                         }
                     }
-                    System.out.println("\nRacer 2: " + "Finished" + " ");
                 }
         );
         Thread timeThread = new Thread(

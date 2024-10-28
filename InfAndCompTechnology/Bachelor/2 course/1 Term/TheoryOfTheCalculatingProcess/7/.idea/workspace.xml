@@ -23,7 +23,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454cd58f-9150-4d80-9609-81ba26ec86f6" name="Changes" comment="Fix 7th practice TCP" />
+    <list default="true" id="454cd58f-9150-4d80-9609-81ba26ec86f6" name="Changes" comment="Fix 7th practice TCP">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../8/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../8/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +118,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/TheoryOfTheCalculatingProcess/7&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -117,6 +127,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Backup\Less Important\My programs\Git\MIREA\InfAndCompTechnology\Bachelor\2 course\1 Term\TheoryOfTheCalculatingProcess\7" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="7" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="7" TARGET_NAME="7" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="7" RUN_TARGET_NAME="7">
       <method v="2">
@@ -142,6 +157,8 @@
       <workItem from="1729074982385" duration="1918000" />
       <workItem from="1729076992301" duration="3000" />
       <workItem from="1729480075375" duration="2446000" />
+      <workItem from="1730096743227" duration="4056000" />
+      <workItem from="1730104225930" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="Fix 7th practice TCP">
       <option name="closed" value="true" />
@@ -165,16 +182,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix 7th practice TCP" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix 7th practice TCP" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>283</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

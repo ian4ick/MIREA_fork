@@ -7,7 +7,7 @@ output nclk
 reg dclk;
 initial
     dclk = 0;
-always @(posedge clk)
+always @(clk)
 begin
     if (cnt == 0)
     begin

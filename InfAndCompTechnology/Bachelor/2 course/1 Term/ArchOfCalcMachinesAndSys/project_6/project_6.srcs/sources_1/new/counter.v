@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module counter(
+module counter#(step = 1, mod = 151)(
 input clk,
 output [7:0] cnt
     );
@@ -8,7 +8,7 @@ initial
 begin
     a = 0;
 end
-always @(posedge clk)
-    a <= (a + 1) % 151;
+always @(clk)
+    a <= (a + step) % mod;
 assign cnt = a;
 endmodule

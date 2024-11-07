@@ -11,13 +11,16 @@ begin
     clk = 0;
     error_reg = 0;
     ref_reg = 500'h3fffffffffffffffffffffffffffffffffffff80000000000000000000000000000000000000fffffffffffffffffffffffffffffffffffffe;
+    
 end
 
 always #1 clk = ~clk;
 
-always @(posedge clk)
+always @(clk)
 begin
    count = count + 1;
+   if (count > 500)
+    $finish;
    error_reg[count] = nclk == ref_reg[count];
 end
 

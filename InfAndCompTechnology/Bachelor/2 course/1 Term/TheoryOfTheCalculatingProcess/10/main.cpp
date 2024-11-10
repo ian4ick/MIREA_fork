@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 class Graph {
+    public:
     int n;
     int g[100][100];
     string names[100];
-public:
     Graph(const int x) {
         n=x;
         for(int i=0;i<n;i++) {
@@ -42,11 +42,11 @@ public:
     }
 
     void displayAdjacencyMatrix() const {
-        std::cout << "\nAdjacency Matrix:";
+        cout << "\nAdjacency Matrix:";
         for(int i=0;i<n;i++) {
-            std::cout << "\n";
+            cout << "\n";
             for(int j=0;j<n;j++) {
-                std::cout << g[i][j] << " ";
+                cout << g[i][j] << " ";
             }
         }
     }
@@ -80,6 +80,44 @@ public:
         return names[x];
     }
 
+    int get_by_power(const string& sx, const string&  sy) {
+        int x,y;
+        for(int i=0;i<n;i++) {
+            if (sx==names[i]) {
+                x = i;
+            }
+            if (sy==names[i]) {
+                y = i;
+            }
+        }
+        int temp[100][100];
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n;j++) {
+                temp[i][j]=g[i][j];
+            }
+        }
+        int k = 1;
+        int temp2[100][100];
+        while (temp[x][y] == 0) {
+            k++;
+            for(int i=0;i<n;i++) {
+                for(int j=0;j<n;j++) {
+                    temp2[i][j] = 0;
+                    for (int k=0;k<n;k++) {
+                        temp2[i][j] += temp[i][k] * g[k][j];
+                    }
+                }
+            }
+            for (int j=0;j<n;j++) {
+                for(int k=0;k<n;k++) {
+                    temp[k][j] = temp2[k][j];
+                }
+            }
+        }
+        return k;
+    }
+
+
 
 };
 
@@ -88,8 +126,17 @@ int main()
     Graph g(0);
     g.addVertex("A");
     g.addVertex("B");
-    g.addEdge(0,1,2);
+    g.addVertex("C");
+    g.addVertex("D");
+    g.addVertex("E");
+    g.addVertex("F");
+    g.addEdge(0,1,1);
+    g.addEdge(0,2,1);
+    g.addEdge(1,3,1);
+    g.addEdge(2,4,1);
+    g.addEdge(4,3,1);
+    g.addEdge(3,5,1);
     g.displayAdjacencyMatrix();
-    cout << g.getVertexName(0) << endl;
+    cout << "\nMin path is: "<<g.get_by_power("A", "F")<<" steps";
     return 0;
 }

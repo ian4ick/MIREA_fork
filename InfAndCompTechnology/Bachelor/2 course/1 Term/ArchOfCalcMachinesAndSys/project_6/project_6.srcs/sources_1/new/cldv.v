@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
-module cldv(
+module cldv#(mod = 151)(
 input clk,
-input [7:0] cnt,
+input [$clog2(mod) - 1:0] cnt,
 output nclk
     );
 reg dclk;

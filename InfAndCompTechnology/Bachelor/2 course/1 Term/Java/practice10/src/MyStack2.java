@@ -5,6 +5,9 @@ public class MyStack2<T> extends ArrayList<T> {
         super();
     }
 
+    public boolean isEmpty() {
+        return size() == 0;
+    }
     public int getSize() {
         return size();
     }

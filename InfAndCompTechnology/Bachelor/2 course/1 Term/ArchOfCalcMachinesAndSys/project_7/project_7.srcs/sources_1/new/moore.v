@@ -20,7 +20,6 @@ begin
             3'bxx1: b <= 6;
             3'b1x0: b <= 4;
         endcase
-        //d = b[0];
         end
         3'b01x: 
         begin
@@ -30,7 +29,6 @@ begin
             3'b001: b <= 4;
             3'bxx1: b <= 5;
         endcase
-        //d = b[0];
         end
         3'b10x: 
         begin
@@ -44,7 +42,6 @@ begin
             3'b110: b <= 1;
             3'b111: b <= 0;
         endcase
-        //d = b[0];
         end
         6: 
         begin
@@ -53,7 +50,6 @@ begin
             3'b01x: b <= 4;
             3'b11x: b <= 5;
         endcase
-        //d = 1;
         end
     endcase
 end

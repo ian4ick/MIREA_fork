@@ -3,15 +3,16 @@ module moore(
 input clk,
 input [2:0] a,
 output reg [2:0] b, 
-output d
+output reg d
     );
 initial
 begin
     b = 0;
 end
-assign d = (b[2] & b[1] ) | b[0];
+//assign d = (b[2] & b[1] ) | b[0];
 always @(posedge clk)
 begin
+    d = (b[2] & b[1] ) | b[0];
     casex (b)
         3'b00x: 
         begin

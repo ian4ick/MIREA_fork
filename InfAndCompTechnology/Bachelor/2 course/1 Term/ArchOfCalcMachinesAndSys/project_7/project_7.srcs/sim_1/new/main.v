@@ -54,6 +54,7 @@ begin
         33: a = 3;
         34: a = 5;
         35: a = 6;
+        36: a = 0;
         default: $finish;
     endcase
 end

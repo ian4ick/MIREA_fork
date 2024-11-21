@@ -9,7 +9,6 @@ initial
 begin
     b = 0;
 end
-//assign d = (b[2] & b[1] ) | b[0];
 always @(posedge clk)
 begin
     d = (b[2] & b[1] ) | b[0];
@@ -25,9 +24,9 @@ begin
         3'b01x: 
         begin
         casex (a)
-            3'b000: b <= 0;
+            3'b110: b <= 0;
             3'bxx0: b <= 1;
-            3'b001: b <= 4;
+            3'b111: b <= 4;
             3'bxx1: b <= 5;
         endcase
         end

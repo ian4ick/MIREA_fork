@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module main(    );
+module main();
 reg clk;
 integer cnt;
 reg [2:0] a;
@@ -23,10 +23,10 @@ begin
         2: a = 2;
         3: a = 1;
         4: a = 0;
-        5: a = 1;
+        5: a = 7;
         6: a = 0;
         7: a = 5;
-        8: a = 0;
+        8: a = 6;
         9: a = 1;
         10: a = 2;
         11: a = 2;
@@ -42,18 +42,18 @@ begin
         21: a = 3;
         22: a = 0;
         23: a = 1;
-        24: a = 1;
+        24: a = 7;
         25: a = 1;
         26: a = 2;
         27: a = 1;
         28: a = 6;
         29: a = 1;
-        30: a = 0;
+        30: a = 6;
         31: a = 1;
         32: a = 0;
         33: a = 3;
         34: a = 5;
-        35: a = 6;
+        35: a = 0;
         36: a = 0;
         default: $finish;
     endcase

@@ -1,2 +1,2 @@
-hdhd By: Thread 1
-kjej By: Thread 2
+Hello, World! By: Thread 1
+Second line! By: Thread 2

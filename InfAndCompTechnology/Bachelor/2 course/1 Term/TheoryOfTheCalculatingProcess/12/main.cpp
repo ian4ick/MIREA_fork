@@ -1,4 +1,5 @@
 #include <fstream>
+#include <functional>
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -12,17 +13,18 @@ void writeToFile(const string &fileName, const string &content, const string &au
     outputFile << content << " By: " << author << endl;
     outputFile.close();
 }
-void printFile(const string &fileName) {
-    lock_guard<mutex> lock(m);
+void printFile(const std::string &fileName) {
+    lock_guard<std::mutex> lock(m);
     ifstream inputFile(fileName);
-    string content;
-    inputFile >> content;
+    string line;
+    while (getline(inputFile, line)) {
+        cout << line << endl;
+    }
     inputFile.close();
-    cout << "Current file: \n" << content << endl;
 }
 class FileManager {
     string fileName;
-    vector<thread> threads;
+    vector<function<void()>> functions;
     public:
     FileManager(const string &fileName) {
         this->fileName = fileName;
@@ -31,16 +33,25 @@ class FileManager {
         outputFile.close();
     }
     void addWriteToQueue(const string& content, const string& author) {
-        threads.emplace_back(writeToFile, fileName, content, author);
+        functions.emplace_back([this, content, author] {
+            writeToFile(fileName, content, author);
+        });
     }
     void addPrintToQueue() {
-        threads.emplace_back(printFile, fileName);
+        functions.emplace_back([this] {
+            printFile(fileName);
+        });
     }
     void exec() {
+        vector<thread> threads;
+        for (const auto &task : functions) {
+            threads.emplace_back(task);
+        }
         for (thread &t : threads) {
             t.join();
         }
         threads.clear();
+        functions.clear();
     }
 };
 
@@ -48,7 +59,7 @@ class FileManager {
 int main() {
     const string fileName = "file.txt";
     cout << "Hello, here's a list of the commands:" << endl;
-    cout << "1. w <text> | write text to file\n2. p | print file\n3. e | execute all tasks\n4. exit | stop the program" << endl;
+    cout << "1. w\n<text> | write text to file\n2. p | print file\n3. e | execute all tasks\n4. exit | stop the program" << endl;
     FileManager fileManager(fileName);
     string query;
     cin >> query;
@@ -57,7 +68,8 @@ int main() {
         if (query == "w") {
             author++;
             string content;
-            cin >> content;
+            cin.sync();
+            getline(cin, content);
             fileManager.addWriteToQueue(content, "Thread " + to_string(author));
         }
         else if (query == "p") {
@@ -68,12 +80,5 @@ int main() {
         }
         cin >> query;
     }
-    /*ofstream outputFile(fileName);
-    outputFile << "";
-    outputFile.close();
-    thread t1(writeToFile, fileName, content, "thread 1");
-    thread t2(writeToFile, fileName, content, "thread 2");
-    t1.join();
-    t2.join();*/
     return 0;
 }

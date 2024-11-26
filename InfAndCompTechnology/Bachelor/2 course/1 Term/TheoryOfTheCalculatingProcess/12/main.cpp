@@ -55,7 +55,6 @@ class FileManager {
     }
 };
 
-
 int main() {
     const string fileName = "file.txt";
     cout << "Hello, here's a list of the commands:" << endl;

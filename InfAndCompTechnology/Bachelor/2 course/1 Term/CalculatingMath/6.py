@@ -11,21 +11,22 @@ def execute(A, Y0):
         Y1 = A @ Y0
         Y2 = A @ Y1
         Y3 = A @ Y2
-
+        print(Y1, Y2, Y3, end="\n")
         B = np.array([
             Y2,
             Y1,
             Y0
         ])
-        print(B)
+        print(B.transpose())
         C = np.linalg.solve(B.transpose(), -Y3)
         print(C)
         a = cm.CubicEquation([1, C[0], C[1], C[2]])
         print(a, a.answers)
         alphas = a.answers
-        for alpha in alphas:
+        """for alpha in alphas:
             if abs(alpha.imag) > 0.01:
                 return -1
+        """
         X = []
         for alpha in alphas:
             q1 = 1
@@ -48,6 +49,19 @@ Y0 = np.array([
 ])
 
 ans = execute(A, Y0)
+
+A = np.array([
+    [-1, -2, 12],
+    [0, 4, 3],
+    [0, 5, 6]
+])
+
+Y0 = np.array([
+    1, 1, 1
+])
+
+execute(A, Y0)
+exit(0)
 while True:
     try:
         ans = execute(A, Y0)

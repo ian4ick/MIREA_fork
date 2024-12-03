@@ -13,7 +13,7 @@ def euler_method():
     y0 = L
     print(f"x0 = {x0}, y0 = {y0}")
     for i in range(4):
-        print(f"x{i+1} = {x0} + {x0 + h} = {x0 + h}")
+        print(f"x{i+1} = {x0} + {h} = {x0 + h}")
         print(f"y{i+1} = {y0} + {h} * {f(x0, y0)} = {y0 + h * f(x0, y0)}")
         y0 += h * f(x0, y0)
         x0 += h
@@ -30,7 +30,7 @@ def trapezoid_method():
     y0 = L
     print(f"x0 = {x0}, y0 = {y0}")
     for i in range(4):
-        print(f"x{i + 1} = {x0} + {x0 + h} = {x0 + h}")
+        print(f"x{i + 1} = {x0} + {h} = {x0 + h}")
         print(f"y{i + 1} = {y0} + {h/2} * ({f(x0, y0)} + {f(x0 + h, y0 + h * f(x0, y0))}) = {y0 + trapezoid_temp(h, x0, y0)}")
         y0 += trapezoid_temp(h, x0, y0)
         x0 += h
@@ -50,7 +50,7 @@ def runge_kutta_method():
         k2 = f(x0 + h/2, y0 + h * k1 / 2)
         k3 = f(x0 + h / 2, y0 + h * k2 / 2)
         k4 = f(x0 + h, y0 + h * k3)
-        print(f"x{i + 1} = {x0} + {x0 + h} = {x0 + h}")
+        print(f"x{i + 1} = {x0} + {h} = {x0 + h}")
         print(f"k1{i} = {k1}")
         print(f"k2{i} = {k2}")
         print(f"k3{i} = {k3}")

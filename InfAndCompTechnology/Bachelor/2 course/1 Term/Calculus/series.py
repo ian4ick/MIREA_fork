@@ -2,17 +2,21 @@ import numpy as np
 import math
 
 
-def count_sum(func: callable(int), start_i: int = 1, end_i: int = 100) -> float:
+pi = math.pi
+
+
+def count_sum(func: callable(int), start_i: int = 1, end_i: int = 100, x: float = 0.0) -> float:
     """
     Count the sum from start index to end index, where each index calculates via function f
     :param func: function that calculates value of element with number n
     :param start_i: start index
     :param end_i: end index
+    :param x: x value
     :return: sum of elements
     """
     res = 0
     for i in range(start_i, end_i):
-        res += func(i)
+        res += func(i, x=x)
     return res
 
 
@@ -44,7 +48,7 @@ class Function:
                 self.f = kwargs["f"]
                 self.function = self.taylor_series
             case _:
-                self.function = self.custom_series
+                self.function = self.custom_function_series
 
     def taylor_series(self, n: int) -> float:
         match self.f:
@@ -54,6 +58,11 @@ class Function:
     @staticmethod
     def custom_series(n: int) -> float:
         res = 3 ** n * ((6*n+7)/(6*n+4))**n**2
+        return res
+
+    @staticmethod
+    def custom_function_series(n: int, x: float) -> float:
+        res = 2/n*(-1)**(n+1) * math.sin(n*x)
         return res
 
     def geometric(self, n: int) -> float:
@@ -66,9 +75,9 @@ class Function:
     def harmonic(n: int) -> float:
         return 1 / n
 
-    def __call__(self, n: int) -> float:
-        return self.function(n)
+    def __call__(self, n: int, x: int=0) -> float:
+        return self.function(n, x)
 
 
-function = Function("Taylor", x=-1, f='e')
-print(count_sum(function.__call__, start_i=0))
+function = Function()
+print(count_sum(function.__call__, start_i=1, x=3.14159))

@@ -1,2 +1,8 @@
 Time resolution is 1 ps
-$finish called at time : 140 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sim_1/new/test_2.v" Line 48
+Stopped at time : 10 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sources_1/new/var8_1.v" Line 18
+Stopped at time : 40 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sources_1/new/var8_1.v" Line 18
+Stopped at time : 70 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sources_1/new/var8_1.v" Line 18
+Stopped at time : 90 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sources_1/new/var8_1.v" Line 18
+Stopped at time : 120 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sources_1/new/var8_1.v" Line 18
+Stopped at time : 140 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sources_1/new/var8_1.v" Line 18
+$finish called at time : 150 ns : File "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/1 Term/ArchOfCalcMachinesAndSys/test/test.srcs/sim_1/new/main.v" Line 32

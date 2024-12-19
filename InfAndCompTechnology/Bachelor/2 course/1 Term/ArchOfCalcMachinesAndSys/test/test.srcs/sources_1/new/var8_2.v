@@ -1,0 +1,16 @@
+`timescale 1ns / 1ps
+module var8_2(
+    input wire [3:0] data,
+    input wire [1:0] addr,
+    output wire y,
+    output reg [1:0] enc_out
+);
+    assign y = data[addr];
+    always @* begin
+        enc_out = 2'b00;
+        if (data[0]) enc_out = 2'b00;
+        else if (data[1]) enc_out = 2'b01;
+        else if (data[2]) enc_out = 2'b10;
+        else if (data[3]) enc_out = 2'b11;
+    end
+endmodule

@@ -1,0 +1,19 @@
+`timescale 1ns / 1ps
+module var7_2(
+    input wire clk,
+    input wire rst_n,
+    input wire d,
+    output reg q,
+    output reg [3:0] dec_out
+);
+    always @(posedge clk) begin
+        if (!rst_n)
+            q <= 1'b0;
+        else
+            q <= d;
+    end
+    always @* begin
+        dec_out = 4'b0000;
+        dec_out[q] = 1'b1;
+    end
+endmodule

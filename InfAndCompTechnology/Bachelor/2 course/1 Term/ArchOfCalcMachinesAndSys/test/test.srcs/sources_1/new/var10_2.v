@@ -1,0 +1,24 @@
+`timescale 1ns / 1ps
+module var10_2(
+    input wire clk,
+    input wire rst_n,
+    input wire j,
+    input wire k,
+    output reg q,
+    output reg [1:0] enc_out
+);
+    always @(posedge clk) begin
+        if (!rst_n)
+            q <= 1'b0;
+        else if (j && !k)
+            q <= 1'b1;
+        else if (!j && k)
+            q <= 1'b0;
+        else if (j && k)
+            q <= ~q;
+    end
+    always @* begin
+        enc_out = 2'b00;
+        if (q) enc_out = 2'b11;
+    end
+endmodule

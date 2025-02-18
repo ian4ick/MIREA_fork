@@ -10,7 +10,7 @@ always @(posedge clk)
     CLOK_ENABLE <= ~CLOK_ENABLE;
 wire btn_c_out, btn_c_out_enable;
 
-DEBOUNCER #(.SIZE(7)) btn_c_debouncer
+DEBOUNCER #(.SIZE(3)) btn_c_debouncer
 (
     .CLK(clk),
     .CLOCK_ENABLE(CLOK_ENABLE),
@@ -19,27 +19,23 @@ DEBOUNCER #(.SIZE(7)) btn_c_debouncer
     .OUT_SIGNAL(btn_c_out)
 );
 
-reg [31:0] memory;
+reg [31:0] shift_reg;
 reg [7:0] an_mask;
 initial
+begin
+    shift_reg = 0;
     an_mask <= 8'b11111111;
+end
 
 always@(posedge clk)
     if (btn_c_out_enable)
     begin
+        shift_reg <= {shift_reg[27:0], SET_VALUE};
         an_mask <= {an_mask[6:0], 1'b0};
     end
 
-SHIFT_REGISTER #(.SIZE(32)) shift_register
-(
-    .CLK(clk),
-    .ENABLE(btn_c_out_enable),
-    .NEW_VALUE(SET_VALUE),
-    .REG_MEMORY(memory)
-);
-
 wire clk_div_out;
-divider #(.divisor(50)) divide_clk
+divider #(.divisor(8)) divide_clk
 (
     .clk(clk),
     .divided_clk(clk_div_out)
@@ -49,7 +45,7 @@ Seven_Segment_LED segments
 (
     .clk(clk_div_out),
     .RESET(1'b0),
-    .NUMBER(memory),
+    .NUMBER(shift_reg),
     .ANOD_MASK(an_mask),
     .ANOD(ANODS),
     .SEGMENT(SEGMENTS)

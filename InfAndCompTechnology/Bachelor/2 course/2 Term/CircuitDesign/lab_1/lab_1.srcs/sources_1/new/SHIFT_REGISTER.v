@@ -12,7 +12,7 @@ end
 
 always @(posedge CLK)
 begin
-    REG_MEMORY <= ((ENABLE) ? {REG_MEMORY[(SIZE - 4):0], NEW_VALUE} : REG_MEMORY);
+    REG_MEMORY <= ((ENABLE) ? {REG_MEMORY[(SIZE - 1 - 4):0], NEW_VALUE} : REG_MEMORY);
 end
 
 endmodule

@@ -26,6 +26,12 @@ end
 
 always @(posedge clk or posedge RESET)
 begin
+    digit_counter <= RESET ? 0 : digit_counter + 3'b1;
+end
+
+
+always @(digit_counter)
+begin
     case (NUMBER_SPLIT[digit_counter])
         4'h0: SEGMENT <= 7'b1000000;
         4'h1: SEGMENT <= 7'b1111001;

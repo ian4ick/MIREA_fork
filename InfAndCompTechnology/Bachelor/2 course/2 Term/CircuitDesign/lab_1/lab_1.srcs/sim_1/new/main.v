@@ -46,8 +46,8 @@ end
 up_level display(
     .clk(clk),
     .btn_c(sync),
-    .SET_VALUE(val),
-    .ANODS(anods),
-    .SEGMENTS(segments)
+    .SW(val),
+    .AN(anods),
+    .SEG(segments)
 );
 endmodule

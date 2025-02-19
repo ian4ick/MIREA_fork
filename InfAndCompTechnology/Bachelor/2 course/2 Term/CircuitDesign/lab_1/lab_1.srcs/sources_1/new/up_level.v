@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 module up_level
 (
-    input clk, btn_c, [3:0] SET_VALUE,
-    output [7:0] ANODS, [6:0] SEGMENTS
+    input clk, btn_c, [3:0] SW,
+    output [7:0] AN, [6:0] SEG
 );
 
 reg CLOK_ENABLE = 0;
@@ -30,7 +30,7 @@ end
 always@(posedge clk)
     if (btn_c_out_enable)
     begin
-        shift_reg <= {shift_reg[27:0], SET_VALUE};
+        shift_reg <= {shift_reg[27:0], SW};
         an_mask <= {an_mask[6:0], 1'b0};
     end
 
@@ -47,7 +47,7 @@ Seven_Segment_LED segments
     .RESET(1'b0),
     .NUMBER(shift_reg),
     .ANOD_MASK(an_mask),
-    .ANOD(ANODS),
-    .SEGMENT(SEGMENTS)
+    .ANOD(AN),
+    .SEGMENT(SEG)
 );
 endmodule

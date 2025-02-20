@@ -8,9 +8,9 @@ var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "C:/Xilinx_Windows_Unpacked_2022_2/Vitis/2022.2/bin;C:/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/lib/nt64;C:/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/bin;";
+  PathVal = "C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vitis/2022.2/bin;C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/lib/nt64;C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/bin;";
 } else {
-  PathVal = "C:/Xilinx_Windows_Unpacked_2022_2/Vitis/2022.2/bin;C:/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/lib/nt64;C:/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/bin;" + PathVal;
+  PathVal = "C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vitis/2022.2/bin;C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/lib/nt64;C:/Users/vav11/Downloads/Xilinx_Windows_Unpacked_2022_2/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;

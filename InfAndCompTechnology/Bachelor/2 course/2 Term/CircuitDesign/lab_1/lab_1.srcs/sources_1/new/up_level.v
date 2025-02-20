@@ -35,7 +35,7 @@ always@(posedge clk)
     end
 
 wire clk_div_out;
-divider #(.divisor(8)) divide_clk
+divider #(.divisor(8000)) divide_clk
 (
     .clk(clk),
     .divided_clk(clk_div_out)

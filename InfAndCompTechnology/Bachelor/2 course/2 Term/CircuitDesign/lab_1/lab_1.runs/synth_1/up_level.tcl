@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.runs/synth_1/up_level.tcl"
+  variable script "C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.runs/synth_1/up_level.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,26 +70,27 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
+set_param chipscope.maxJobs 4
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.cache/wt} [current_project]
-set_property parent.project_path {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.cache/wt} [current_project]
+set_property parent.project_path {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.cache/ip} [current_project]
+set_property ip_output_repo {c:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/DEBOUNCER.v}
-  {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/Seven_Segment_LED.v}
-  {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/divider.v}
-  {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/up_level.v}
+  {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/DEBOUNCER.v}
+  {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/Seven_Segment_LED.v}
+  {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/divider.v}
+  {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/sources_1/new/up_level.v}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -100,12 +101,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/constrs_1/new/constrain.xdc}}
-set_property used_in_implementation false [get_files {{C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/constrs_1/new/constrain.xdc}}]
+read_xdc {{C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/constrs_1/new/constrain.xdc}}
+set_property used_in_implementation false [get_files {{C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/constrs_1/new/constrain.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/KAL/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/utils_1/imports/synth_1/up_level.dcp}
+read_checkpoint -auto_incremental -incremental {C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_1/lab_1.srcs/utils_1/imports/synth_1/up_level.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

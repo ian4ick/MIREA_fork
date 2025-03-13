@@ -1,0 +1,65 @@
+Delay Type,Incr (ns),Path (ns),Location,Netlist Resource(s)
+FDRE (Prop_fdre_C_Q),(f) 0.456,5.782,Site: SLICE_X86Y67,re_reg[3]/Q
+"net (fo=8, routed)",0.694,6.476,"",re[3]
+LUT6 (Prop_lut6_I0_O),(r) 0.124,6.600,Site: SLICE_X87Y67,rf[8]_i_22/O
+"net (fo=13, routed)",0.550,7.150,"",rf[8]_i_22_n_0
+LUT4 (Prop_lut4_I1_O),(r) 0.124,7.274,Site: SLICE_X87Y66,rf[8]_i_14/O
+"net (fo=5, routed)",0.486,7.760,"",rf[8]_i_14_n_0
+LUT6 (Prop_lut6_I0_O),(r) 0.124,7.884,Site: SLICE_X86Y65,rf[8]_i_85/O
+"net (fo=1, routed)",0.000,7.884,"",rf[8]_i_85_n_0
+CARRY4 (Prop_carry4_S[3]_CO[3]),(r) 0.401,8.285,Site: SLICE_X86Y65,rf_reg[8]_i_43/CO[3]
+"net (fo=1, routed)",0.000,8.285,"",rf_reg[8]_i_43_n_0
+CARRY4 (Prop_carry4_CI_CO[3]),(r) 0.114,8.399,Site: SLICE_X86Y66,rf_reg[8]_i_23/CO[3]
+"net (fo=1, routed)",0.000,8.399,"",rf_reg[8]_i_23_n_0
+CARRY4 (Prop_carry4_CI_CO[0]),(r) 0.271,8.670,Site: SLICE_X86Y67,rf_reg[8]_i_15/CO[0]
+"net (fo=12, routed)",0.538,9.208,"",rf2[6]
+LUT3 (Prop_lut3_I0_O),(r) 0.373,9.581,Site: SLICE_X86Y68,rf[8]_i_91/O
+"net (fo=1, routed)",0.000,9.581,"",rf[8]_i_91_n_0
+CARRY4 (Prop_carry4_S[3]_CO[3]),(r) 0.401,9.982,Site: SLICE_X86Y68,rf_reg[8]_i_52/CO[3]
+"net (fo=1, routed)",0.000,9.982,"",rf_reg[8]_i_52_n_0
+CARRY4 (Prop_carry4_CI_O[1]),(r) 0.334,10.316,Site: SLICE_X86Y69,rf_reg[8]_i_26/O[1]
+"net (fo=2, routed)",0.730,11.046,"",rf_reg[8]_i_26_n_6
+LUT3 (Prop_lut3_I2_O),(r) 0.303,11.349,Site: SLICE_X86Y72,rf[8]_i_59/O
+"net (fo=1, routed)",0.000,11.349,"",rf[8]_i_59_n_0
+CARRY4 (Prop_carry4_S[2]_CO[3]),(r) 0.398,11.747,Site: SLICE_X86Y72,rf_reg[8]_i_29/CO[3]
+"net (fo=1, routed)",0.000,11.747,"",rf_reg[8]_i_29_n_0
+CARRY4 (Prop_carry4_CI_CO[1]),(r) 0.157,11.904,Site: SLICE_X86Y73,rf_reg[8]_i_17/CO[1]
+"net (fo=12, routed)",0.588,12.492,"",rf2[4]
+CARRY4 (Prop_carry4_CYINIT_CO[3]),(r) 0.785,13.277,Site: SLICE_X86Y74,rf_reg[8]_i_62/CO[3]
+"net (fo=1, routed)",0.009,13.286,"",rf_reg[8]_i_62_n_0
+CARRY4 (Prop_carry4_CI_CO[3]),(r) 0.114,13.400,Site: SLICE_X86Y75,rf_reg[8]_i_32/CO[3]
+"net (fo=1, routed)",0.000,13.400,"",rf_reg[8]_i_32_n_0
+CARRY4 (Prop_carry4_CI_CO[1]),(r) 0.157,13.557,Site: SLICE_X86Y76,rf_reg[8]_i_18/CO[1]
+"net (fo=12, routed)",0.633,14.190,"",rf2[3]
+LUT3 (Prop_lut3_I0_O),(r) 0.329,14.519,Site: SLICE_X86Y77,rf[8]_i_102/O
+"net (fo=1, routed)",0.000,14.519,"",rf[8]_i_102_n_0
+CARRY4 (Prop_carry4_S[1]_CO[3]),(r) 0.550,15.069,Site: SLICE_X86Y77,rf_reg[8]_i_67/CO[3]
+"net (fo=1, routed)",0.000,15.069,"",rf_reg[8]_i_67_n_0
+CARRY4 (Prop_carry4_CI_CO[3]),(r) 0.114,15.183,Site: SLICE_X86Y78,rf_reg[8]_i_35/CO[3]
+"net (fo=1, routed)",0.000,15.183,"",rf_reg[8]_i_35_n_0
+CARRY4 (Prop_carry4_CI_CO[1]),(r) 0.157,15.340,Site: SLICE_X86Y79,rf_reg[8]_i_19/CO[1]
+"net (fo=12, routed)",0.594,15.935,"",rf2[2]
+CARRY4 (Prop_carry4_CYINIT_CO[3]),(r) 0.785,16.720,Site: SLICE_X86Y80,rf_reg[8]_i_72/CO[3]
+"net (fo=1, routed)",0.000,16.720,"",rf_reg[8]_i_72_n_0
+CARRY4 (Prop_carry4_CI_CO[3]),(r) 0.114,16.834,Site: SLICE_X86Y81,rf_reg[8]_i_38/CO[3]
+"net (fo=1, routed)",0.000,16.834,"",rf_reg[8]_i_38_n_0
+CARRY4 (Prop_carry4_CI_CO[1]),(r) 0.157,16.991,Site: SLICE_X86Y82,rf_reg[8]_i_20/CO[1]
+"net (fo=12, routed)",0.665,17.655,"",rf2[1]
+LUT3 (Prop_lut3_I0_O),(r) 0.329,17.984,Site: SLICE_X86Y83,rf[8]_i_109/O
+"net (fo=1, routed)",0.000,17.984,"",rf[8]_i_109_n_0
+CARRY4 (Prop_carry4_S[0]_CO[3]),(r) 0.532,18.516,Site: SLICE_X86Y83,rf_reg[8]_i_77/CO[3]
+"net (fo=1, routed)",0.000,18.516,"",rf_reg[8]_i_77_n_0
+CARRY4 (Prop_carry4_CI_CO[3]),(r) 0.114,18.630,Site: SLICE_X86Y84,rf_reg[8]_i_41/CO[3]
+"net (fo=1, routed)",0.000,18.630,"",rf_reg[8]_i_41_n_0
+CARRY4 (Prop_carry4_CI_CO[0]),(r) 0.271,18.901,Site: SLICE_X86Y85,rf_reg[8]_i_21/CO[0]
+"net (fo=1, routed)",0.759,19.660,"",rf2[0]
+LUT2 (Prop_lut2_I1_O),(r) 0.373,20.033,Site: SLICE_X85Y80,rf[8]_i_13/O
+"net (fo=1, routed)",0.000,20.033,"",rf[8]_i_13_n_0
+CARRY4 (Prop_carry4_S[0]_CO[3]),(r) 0.532,20.565,Site: SLICE_X85Y80,rf_reg[8]_i_4/CO[3]
+"net (fo=1, routed)",0.000,20.565,"",rf_reg[8]_i_4_n_0
+CARRY4 (Prop_carry4_CI_O[3]),(r) 0.313,20.878,Site: SLICE_X85Y81,rf_reg[8]_i_3/O[3]
+"net (fo=1, routed)",0.597,21.474,"",rf10_out[7]
+LUT4 (Prop_lut4_I1_O),(r) 0.306,21.780,Site: SLICE_X87Y80,rf[8]_i_1/O
+"net (fo=9, routed)",0.358,22.139,"",rf[8]_i_1_n_0
+FDRE,"","",Site: SLICE_X84Y80,rf_reg[1]/R
+Arrival Time,"",22.139,"",""

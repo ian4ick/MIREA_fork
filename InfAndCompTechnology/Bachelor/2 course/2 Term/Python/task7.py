@@ -17,11 +17,11 @@ def f39(x, bias):
 
 
 def f4(x):
-    if x[4] == 'PONY':
+    if x[4] == "PONY":
         return f01(x)
-    if x[4] == 'D':
+    if x[4] == "D":
         return 2
-    if x[4] == 'CSV':
+    if x[4] == "CSV":
         return f39(x, 0)
     return None
 
@@ -35,11 +35,11 @@ def f1(x):
 
 
 def main(x):
-    if x[0] == 'CLEAN':
+    if x[0] == "CLEAN":
         return 11
-    if x[0] == 'RUBY':
+    if x[0] == "RUBY":
         return 12
-    if x[0] == 'VOLT':
+    if x[0] == "VOLT":
         if x[2] == 2014:
             return f4(x)
         if x[2] == 2002:
@@ -48,9 +48,9 @@ def main(x):
             return 10
     return None
 
-print(main(['CLEAN', 2006, 2014, 2019, 'PONY']))
-print(main(['RUBY', 2017, 2014, 1977, 'PONY']))
-print(main(['VOLT', 2017, 2001, 1963, 'D']))
-print(main(['VOLT', 2006, 2014, 2019, 'CSV']))
-print(main(['VOLT', 2006, 2002, 2019, 'CSV']))
 
+print(main(["CLEAN", 2006, 2014, 2019, "PONY"]))
+print(main(["RUBY", 2017, 2014, 1977, "PONY"]))
+print(main(["VOLT", 2017, 2001, 1963, "D"]))
+print(main(["VOLT", 2006, 2014, 2019, "CSV"]))
+print(main(["VOLT", 2006, 2002, 2019, "CSV"]))

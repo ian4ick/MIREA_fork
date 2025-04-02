@@ -18,6 +18,12 @@ def main(n: int, arr: List[float]) -> List[float]:
     return arr
 
 
+if __name__ == "__main__":
+    n = int(input())
+    arr = list(map(float, input().split()))
+    print(*main(n, arr))
+
+exit(0)
 ref_arr = [1., 2., 3., 4., 5.]
 tmp_arr = ref_arr.copy()
 for _ in range(10):

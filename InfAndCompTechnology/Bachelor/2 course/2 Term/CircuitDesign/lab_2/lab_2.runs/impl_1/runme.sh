@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_2/lab_2.runs/impl_1'
+HD_PWD='C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log high_level.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source high_level.tcl -notrace
+EAStep vivado -log up_level.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source up_level.tcl -notrace
 
 

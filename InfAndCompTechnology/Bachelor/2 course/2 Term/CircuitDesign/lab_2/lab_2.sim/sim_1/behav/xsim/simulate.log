@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Stopped at time : 0 fs : File "C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/sorter.v" Line 42
+Stopped at time : 3578 ns : File "C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sim_1/new/main.v" Line 77
+$finish called at time : 11164 ns : File "C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sim_1/new/main.v" Line 305

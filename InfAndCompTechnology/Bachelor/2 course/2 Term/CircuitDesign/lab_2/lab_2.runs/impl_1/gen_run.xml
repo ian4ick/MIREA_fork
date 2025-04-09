@@ -1,86 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743151955">
-  <File Type="ROUTE-PWR" Name="high_level_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="high_level.tcl"/>
-  <File Type="BITSTR-MMI" Name="high_level.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="high_level_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="high_level_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="high_level_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="high_level_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="high_level_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="high_level_opt.dcp"/>
-  <File Type="OPT-DRC" Name="high_level_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="high_level.hwdef"/>
-  <File Type="PWROPT-DCP" Name="high_level_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="high_level_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="high_level_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="high_level_placed.dcp"/>
-  <File Type="PLACE-IO" Name="high_level_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="high_level_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="high_level_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="high_level_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="high_level_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="high_level_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="high_level_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="high_level.bin"/>
-  <File Type="PLACE-TIMING" Name="high_level_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="high_level_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="high_level.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="high_level_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="high_level_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="high_level_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="high_level.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="high_level_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="high_level_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="high_level_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="high_level_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="high_level_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="high_level_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="high_level_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="high_level_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="high_level_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="high_level_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="high_level_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="high_level_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="high_level_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="high_level_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="high_level_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="high_level_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="high_level_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="high_level_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="high_level_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="high_level_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="high_level_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="high_level_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="high_level_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="high_level_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="high_level_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="high_level_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="high_level_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="high_level.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="high_level_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="high_level_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="high_level.nky"/>
-  <File Type="BITSTR-BMM" Name="high_level_bd.bmm"/>
-  <File Type="PDI-FILE" Name="high_level.pdi"/>
-  <File Type="RCFI_FILE" Name="high_level.rcfi"/>
-  <File Type="CFI_FILE" Name="high_level.cfi"/>
-  <File Type="RNPI_FILE" Name="high_level.rnpi"/>
-  <File Type="NPI_FILE" Name="high_level.npi"/>
-  <File Type="RBD_FILE" Name="high_level.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1744129170">
+  <File Type="ROUTE-PWR" Name="up_level_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="up_level.tcl"/>
+  <File Type="BITSTR-MMI" Name="up_level.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="up_level_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="up_level_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="up_level_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="up_level_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="up_level_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="up_level_opt.dcp"/>
+  <File Type="OPT-DRC" Name="up_level_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="up_level.hwdef"/>
+  <File Type="PWROPT-DCP" Name="up_level_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="up_level_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="up_level_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="up_level_placed.dcp"/>
+  <File Type="PLACE-IO" Name="up_level_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="up_level_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="up_level_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="up_level_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="up_level_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="up_level_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="up_level_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="up_level.bin"/>
+  <File Type="PLACE-TIMING" Name="up_level_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="up_level_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="up_level.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="up_level_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="up_level_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="up_level_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="up_level.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="up_level_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="up_level_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="up_level_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="up_level_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="up_level_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="up_level_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="up_level_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="up_level_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="up_level_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="up_level_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="up_level_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="up_level_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="up_level_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="up_level_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="up_level_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="up_level_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="up_level_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="up_level_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="up_level_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="up_level_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="up_level_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="up_level_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="up_level_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="up_level_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="up_level_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="up_level_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="up_level_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="up_level.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="up_level_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="up_level_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="up_level.nky"/>
+  <File Type="BITSTR-BMM" Name="up_level_bd.bmm"/>
+  <File Type="PDI-FILE" Name="up_level.pdi"/>
+  <File Type="RCFI_FILE" Name="up_level.rcfi"/>
+  <File Type="CFI_FILE" Name="up_level.cfi"/>
+  <File Type="RNPI_FILE" Name="up_level.rnpi"/>
+  <File Type="NPI_FILE" Name="up_level.npi"/>
+  <File Type="RBD_FILE" Name="up_level.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="high_level.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="high_level.sysdef"/>
-  <File Type="BG-BGN" Name="high_level.bgn"/>
-  <File Type="BG-DRC" Name="high_level.drc"/>
-  <File Type="RDI-RDI" Name="high_level.vdi"/>
+  <File Type="BITSTR-LTX" Name="up_level.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="up_level.sysdef"/>
+  <File Type="BG-BGN" Name="up_level.bgn"/>
+  <File Type="BG-DRC" Name="up_level.drc"/>
+  <File Type="RDI-RDI" Name="up_level.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="high_level_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="high_level_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="up_level_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="up_level_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/DEBOUNCER.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Seven_Segment_LED.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/divider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/sorter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -88,7 +109,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/high_level.v">
+    <File Path="$PSRCDIR/sources_1/new/up_level.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -97,8 +118,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="high_level"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="up_level"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

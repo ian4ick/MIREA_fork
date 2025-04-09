@@ -2,6 +2,11 @@
 2020.2
 Oct 14 2022
 05:20:55
-C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_2/lab_2.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
-C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_2/lab_2.srcs/sim_1/new/main.v,1743149872,verilog,,,,main,,,,,,,,
-C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_2/lab_2.srcs/sources_1/new/sorter.v,1743151921,verilog,,C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_2/lab_2.srcs/sim_1/new/main.v,,sorter,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.gen/sources_1/ip/vio_0/sim/vio_0.v,1744114040,verilog,,C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/DEBOUNCER.v,,vio_0,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sim_1/new/main.v,1744118639,verilog,,,,main,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/DEBOUNCER.v,1739818880,verilog,,C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/Seven_Segment_LED.v,,DEBOUNCER,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/Seven_Segment_LED.v,1739897725,verilog,,C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/divider.v,,Seven_Segment_LED,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/divider.v,1739897204,verilog,,C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/sorter.v,,divider,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/sorter.v,1744119226,verilog,,C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/up_level.v,,sorter,,,,,,,,
+C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sources_1/new/up_level.v,1744118979,verilog,,C:/Users/vav11/Downloads/Vivado/lab_2/lab_2.srcs/sim_1/new/main.v,,up_level,,,,,,,,

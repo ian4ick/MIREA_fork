@@ -6,7 +6,7 @@ module PS2_manager(
     input reset,
     
     output reg R_O,
-    output [3:0] out,
+    output [7:0] out,
     output [1:0] flags
 );
 parameter WAIT_ONE = 0, WAIT_ZERO = 1;
@@ -67,10 +67,26 @@ PS2_design ps2(
     .valid_out(R_O)
 );
 
+reg [7:0] out_gen = 0;
+wire [3:0] out_dc;
+
 PS2_DC dc(
     .keycode(PS2_out),
-    .out(scan_code),
+    .out(out_dc),
     .flags(flags)
 );
+
+always@(out_dc) begin
+    if (!flags[1]) begin
+        if (flags[0])
+            out_gen <= {out_gen[7:4], out_dc};
+        else
+            out_gen <= out_gen;
+    end
+    else
+        out_gen <= out_gen;
+end
+
+assign out = out_gen;
 
 endmodule

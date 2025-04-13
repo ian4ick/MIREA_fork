@@ -64,7 +64,7 @@ PS2_design ps2(
     .PS_2_clk(PS_2_clk), 
     .PS_2_data(PS_2_data),
     .scan_code(PS2_out),
-    .valid_out(R_O)
+    .valid_out(PS2_out_valid)
 );
 
 reg [7:0] out_gen = 0;
@@ -79,7 +79,7 @@ PS2_DC dc(
 always@(out_dc) begin
     if (!flags[1]) begin
         if (flags[0])
-            out_gen <= {out_gen[7:4], out_dc};
+            out_gen <= {out_gen[3:0], out_dc};
         else
             out_gen <= out_gen;
     end

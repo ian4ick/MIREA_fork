@@ -1,11 +1,9 @@
 `timescale 1ns / 1ps
-module test(
-    );
-reg clk, pclk, pdata,
- reset;
+module test();
+reg clk = 0, pclk, pdata, reset;
 wire [7:0] AN;
 wire [6:0] SEG;
-reg [3:0] i;
+reg [3:0] i = 0;
 wire LED;
 reg [7:0] num;
 reg is_even;
@@ -30,12 +28,14 @@ initial begin
     NUMBERS[13] = 8'h23;
     NUMBERS[14] = 8'h24;
     NUMBERS[15] = 8'h2B;
+    reset = 0;
     pdata = 1;
-    pclk = 0;
+    pclk = 1;
     is_even = 1;
     // Start of test cases
     // 5 / 2 = 2 * 2 + 1
     num = NUMBERS[5];
+    #10;
     for (i=0; i<11; i=i+1)
     begin
         case(i)
@@ -53,10 +53,11 @@ initial begin
                 pdata = 1;
             end
         endcase
-        pclk = 0;
-        #300;
-        pclk = 1;
-        #300;
+        #20;
+        //pclk = 0;
+        //#100;
+        //pclk = 1;
+        //#100;
     end
     num = ENTER_CODE;
     for (i=0; i<11; i=i+1)
@@ -76,10 +77,11 @@ initial begin
                 pdata = 1;
             end
         endcase
-        pclk = 0;
-        #300;
-        pclk = 1;
-        #300;
+        #20;
+        //pclk = 0;
+        //#100;
+        //pclk = 1;
+        //#100;
     end
     num = NUMBERS[2];
     for (i=0; i<11; i=i+1)
@@ -99,10 +101,11 @@ initial begin
                 pdata = 1;
             end
         endcase
-        pclk = 0;
-        #300;
-        pclk = 1;
-        #300;
+        #20;
+        //pclk = 0;
+        //#100;
+        //pclk = 1;
+        //#100;
     end
     num = ENTER_CODE;
     for (i=0; i<11; i=i+1)
@@ -122,14 +125,13 @@ initial begin
                 pdata = 1;
             end
         endcase
-        pclk = 0;
-        #300;
-        pclk = 1;
-        #300;
+        #20;
+        //pclk = 0;
+        //#100;
+        //pclk = 1;
+        //#100;
     end
 end
-
-
 
 reg [3:0] number;
 reg [31:0] numbers;
@@ -171,7 +173,8 @@ begin
     if (~AN[7])
         numbers[31:28] = number;
 end
-always#10 clk=~clk;
+always#10 clk<=~clk;
+always#10 pclk<=~pclk;
 main m(
     .clk(clk),
     .PS_2_clk(pclk),

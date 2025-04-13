@@ -1,2 +1,0 @@
-Breakpoint File Version 1.0
-70,true,"C:/Backup/Less Important/My programs/Git/MIREA/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/Division.v"

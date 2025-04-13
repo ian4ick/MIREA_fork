@@ -49,7 +49,7 @@ always@* begin
     else next_cnt <= cnt;
 end
 
-reg [2:0] state, new_state;
+reg [2:0] state=0, new_state=0;
 localparam WAIT_START_BIT = 0, READ_DATA = 1, CHECK_PARITY = 2, STOP_BIT = 3, EMPTY = 4;
 
 always@(posedge clk) begin

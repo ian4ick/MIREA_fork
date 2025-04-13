@@ -35,102 +35,110 @@ initial begin
     // Start of test cases
     // 5 / 2 = 2 * 2 + 1
     num = NUMBERS[5];
-    #10;
+    #100;
     for (i=0; i<11; i=i+1)
     begin
         case(i)
             0: begin
                 pdata = 0;
             end
-            1-9: begin
+            1,2,3,4,5,6,7,8: begin
                 pdata = num[i-1];
                 is_even = is_even + num[i-1];
             end
-            10: begin
+            9: begin
                 pdata = is_even;
             end
-            11: begin
+            10: begin
                 pdata = 1;
             end
         endcase
         #20;
-        //pclk = 0;
-        //#100;
-        //pclk = 1;
-        //#100;
+        pclk = 0;
+        #100;
+        pclk = 1;
+        #100;
     end
     num = ENTER_CODE;
+    is_even = 1;
+    #200;
     for (i=0; i<11; i=i+1)
     begin
         case(i)
             0: begin
                 pdata = 0;
             end
-            1-9: begin
+            1,2,3,4,5,6,7,8: begin
                 pdata = num[i-1];
                 is_even = is_even + num[i-1];
             end
-            10: begin
+            9: begin
                 pdata = is_even;
             end
-            11: begin
+            10: begin
                 pdata = 1;
             end
         endcase
         #20;
-        //pclk = 0;
-        //#100;
-        //pclk = 1;
-        //#100;
+        pclk = 0;
+        #100;
+        pclk = 1;
+        #100;
     end
     num = NUMBERS[2];
+    is_even = 1;
+    #200;
     for (i=0; i<11; i=i+1)
     begin
         case(i)
             0: begin
                 pdata = 0;
             end
-            1-9: begin
+            1,2,3,4,5,6,7,8: begin
                 pdata = num[i-1];
                 is_even = is_even + num[i-1];
             end
-            10: begin
+            9: begin
                 pdata = is_even;
             end
-            11: begin
+            10: begin
                 pdata = 1;
             end
         endcase
         #20;
-        //pclk = 0;
-        //#100;
-        //pclk = 1;
-        //#100;
+        pclk = 0;
+        #100;
+        pclk = 1;
+        #100;
     end
     num = ENTER_CODE;
+    is_even = 1;
+    #200;
     for (i=0; i<11; i=i+1)
     begin
         case(i)
             0: begin
                 pdata = 0;
             end
-            1-9: begin
+            1,2,3,4,5,6,7,8: begin
                 pdata = num[i-1];
                 is_even = is_even + num[i-1];
             end
-            10: begin
+            9: begin
                 pdata = is_even;
             end
-            11: begin
+            10: begin
                 pdata = 1;
             end
         endcase
         #20;
-        //pclk = 0;
-        //#100;
-        //pclk = 1;
-        //#100;
+        pclk = 0;
+        #100;
+        pclk = 1;
+        #100;
     end
+    #1000
+    $finish;
 end
 
 reg [3:0] number;
@@ -173,8 +181,8 @@ begin
     if (~AN[7])
         numbers[31:28] = number;
 end
-always#10 clk<=~clk;
-always#10 pclk<=~pclk;
+always#10 clk=~clk;
+//always#10 pclk<=~pclk;
 main m(
     .clk(clk),
     .PS_2_clk(pclk),

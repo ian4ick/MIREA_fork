@@ -54,7 +54,7 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #20;
+        #10;
         /*
         pclk = 0;
         #100;
@@ -83,7 +83,7 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #20;
+        #10;
         /*
         pclk = 0;
         #100;
@@ -112,7 +112,7 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #20;
+        #10;
         /*
         pclk = 0;
         #100;
@@ -140,7 +140,7 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #20;
+        #10;
         /*
         pclk = 0;
         #100;
@@ -169,7 +169,7 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #20;
+        #10;
         /*
         pclk = 0;
         #100;
@@ -198,7 +198,7 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #20;
+        #10;
         /*
         pclk = 0;
         #100;

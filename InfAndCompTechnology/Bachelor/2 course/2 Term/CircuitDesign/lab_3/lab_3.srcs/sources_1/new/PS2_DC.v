@@ -6,7 +6,6 @@ module PS2_DC(
 );
 
 reg [7:0] NUMBERS [0:15];
-reg [7:0] tmp_key;
 parameter [7:0] ENTER_CODE = 8'h5A;                              
 parameter NUMBER_F = 0, ENTER_F = 1;
 

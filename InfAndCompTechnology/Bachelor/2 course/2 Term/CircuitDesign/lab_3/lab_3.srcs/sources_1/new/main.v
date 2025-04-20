@@ -33,8 +33,7 @@ PS2_manager ps_2(
     .PS_2_data(PS_2_data),
     .reset(cpu_reset_out_enable),
     .R_O(ps2_data_ex),
-    .out(ps2_data_compl),
-    .flags(flags)
+    .out(ps2_data_compl)
 );
 
 wire [3:0] chastnoe, ostatok;

@@ -55,12 +55,9 @@ initial begin
             end
         endcase
         #10;
-        /*
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
-        #100;
-        */
     end
     
     num = UNPRESS_CODE;
@@ -84,12 +81,9 @@ initial begin
             end
         endcase
         #10;
-        /*
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
-        #100;
-        */
     end
     
     num = ENTER_CODE;
@@ -113,13 +107,37 @@ initial begin
             end
         endcase
         #10;
-        /*
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
-        #100;
-        */
     end
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
     num = NUMBERS[2];
     is_even = 1;
     #10;
@@ -141,12 +159,9 @@ initial begin
             end
         endcase
         #10;
-        /*
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
-        #100;
-        */
     end
     
     num = UNPRESS_CODE;
@@ -170,12 +185,9 @@ initial begin
             end
         endcase
         #10;
-        /*
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
-        #100;
-        */
     end
     
     num = ENTER_CODE;
@@ -199,15 +211,38 @@ initial begin
             end
         endcase
         #10;
-        /*
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
-        #100;
-        */
     end
-    #1000
-    $finish;
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    #1000;
 end
 
 reg [3:0] number;
@@ -251,7 +286,6 @@ begin
         numbers[31:28] = number;
 end
 always#5 clk=~clk;
-always#5 pclk<=~pclk;
 main m(
     .clk(clk),
     .PS_2_clk(pclk),

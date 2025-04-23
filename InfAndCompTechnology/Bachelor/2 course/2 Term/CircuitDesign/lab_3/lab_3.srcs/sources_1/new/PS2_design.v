@@ -8,7 +8,7 @@ module PS2_design(
     output reg valid_out
 );
 
-reg [1:0] ps_2_clk_sync, ps_2_data_sync;
+reg [1:0] ps_2_clk_sync = 2'b11, ps_2_data_sync = 2'b11;
 
 always @(posedge clk) begin
     if(reset) begin
@@ -33,7 +33,7 @@ end
 wire ps_2_clk_edge;
 assign ps_2_clk_edge = (ps_2_clk_sync[1] == 0) && (ps_2_clk_sync[1] != ps_2_clk_ff);
 
-reg [3:0] cnt = 0, next_cnt;
+reg [3:0] cnt = 0, next_cnt = 0;
 
 always@(posedge clk) begin
     if (reset) cnt <= 4'd0;
@@ -50,7 +50,7 @@ always@* begin
 end
 
 reg [2:0] state=0, new_state=0;
-localparam WAIT_START_BIT = 0, READ_DATA = 1, CHECK_PARITY = 2, STOP_BIT = 3, EMPTY = 4;
+parameter WAIT_START_BIT = 0, READ_DATA = 1, CHECK_PARITY = 2, STOP_BIT = 3, EMPTY = 4;
 
 always@(posedge clk) begin
     if(reset) state <= 0;

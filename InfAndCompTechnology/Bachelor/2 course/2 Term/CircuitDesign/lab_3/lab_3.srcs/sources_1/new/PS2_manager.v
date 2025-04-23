@@ -6,56 +6,17 @@ module PS2_manager(
     input reset,
     
     output reg R_O,
-    output [7:0] out,
-    output [1:0] flags
+    output reg [9:0] out
 );
-parameter WAIT_ONE = 0, WAIT_ZERO = 1;
-reg state;
-reg release_flag;
-
+reg conf;
+wire release_dc, dc_valid, enter_dc;
 wire PS2_out_valid; 
 wire [7:0] PS2_out;
 
 initial begin
-    state = 0; R_O = 0;
-    release_flag = 0;
-end
-
-always@(posedge clk)
-begin
-    if(reset) begin
-        state <= 0;
-        R_O <= 0;
-        release_flag <= 0;
-    end
-    else begin
-        case(state)
-            WAIT_ONE: begin
-                if (PS2_out_valid) begin
-                    if (PS2_out == 8'hF0)
-                        release_flag <= 1;
-                    else if (release_flag)
-                    begin
-                        R_O <= 1;
-                        release_flag <= 0;
-                    end
-                    else begin
-                        R_O <= R_O;
-                        release_flag <= release_flag;
-                    end
-                    state <= WAIT_ZERO;     
-                end
-                else state <= state;
-            end
-            WAIT_ZERO: begin
-                R_O <= 0; 
-                if (!PS2_out_valid) 
-                    state <= WAIT_ONE;  
-                else
-                    state <= state;
-            end       
-       endcase
-   end  
+    out = 0;
+    R_O = 0;
+    conf = 0;
 end
 
 PS2_design ps2(
@@ -67,26 +28,34 @@ PS2_design ps2(
     .valid_out(PS2_out_valid)
 );
 
-reg [7:0] out_gen = 0;
+reg [9:0] out_gen = 0;
 wire [3:0] out_dc;
 
 PS2_DC dc(
-    .keycode(PS2_out),
+    .keycode(PS2_out), .clk(clk), .valid_in(PS2_out_valid), .reset(reset),
     .out(out_dc),
-    .flags(flags)
+    .key_release(release_dc), .valid_out(dc_valid), .enter_release(enter_dc)
 );
 
-always@(out_dc) begin
-    if (!flags[1]) begin
-        if (flags[0])
-            out_gen <= {out_gen[3:0], out_dc};
-        else
-            out_gen <= out_gen;
+always@(posedge clk) begin
+    conf <= dc_valid && enter_dc;
+    if (dc_valid) begin
+        if (enter_dc)
+            out_gen <= 0;
+        else begin
+            if (release_dc)
+                out_gen <= out_gen;
+            else
+                out_gen <= {2'b00, out_gen[3:0], out_dc};
+        end
     end
     else
         out_gen <= out_gen;
 end
 
-assign out = out_gen;
+always@* begin
+    out <= out_gen;
+    R_O <= conf;
+end
 
 endmodule

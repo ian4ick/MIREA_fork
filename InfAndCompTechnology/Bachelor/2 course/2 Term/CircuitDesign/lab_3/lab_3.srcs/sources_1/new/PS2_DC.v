@@ -1,72 +1,64 @@
 `timescale 1ns / 1ps
 module PS2_DC(
     input [7:0] keycode,
+    input clk, reset, valid_in,
     output reg [3:0] out,
-    output reg [1:0] flags
+    output reg valid_out,
+    output reg key_release,
+    output reg enter_release
 );
-
-reg [7:0] NUMBERS [0:15];
-parameter [7:0] ENTER_CODE = 8'h5A;                              
-parameter NUMBER_F = 0, ENTER_F = 1;
+reg new_key_release;
+parameter [7:0] ENTER_CODE = 8'h5A;
 
 initial begin 
-    NUMBERS[0] = 8'h45; 
-    NUMBERS[1] = 8'h16;
-    NUMBERS[2] = 8'h1E;
-    NUMBERS[3] = 8'h26;
-    NUMBERS[4] = 8'h25;
-    NUMBERS[5] = 8'h2E;
-    NUMBERS[6] = 8'h36;
-    NUMBERS[7] = 8'h3D;
-    NUMBERS[8] = 8'h3E;
-    NUMBERS[9] = 8'h46;
-    NUMBERS[10] = 8'h1C;
-    NUMBERS[11] = 8'h32;
-    NUMBERS[12] = 8'h21;
-    NUMBERS[13] = 8'h23;
-    NUMBERS[14] = 8'h24;
-    NUMBERS[15] = 8'h2B;
     out = 0;
-    flags = 0;
+    key_release = 1;
+    valid_out = 0;
+    enter_release = 0;
 end
 
-always@(keycode)
-begin  
-     case(keycode)
-            NUMBERS[0] : out = 4'h0; 
-            NUMBERS[1] : out = 4'h1; 
-            NUMBERS[2] : out = 4'h2;
-            NUMBERS[3] : out = 4'h3;
-            NUMBERS[4] : out = 4'h4;
-            NUMBERS[5] : out = 4'h5;
-            NUMBERS[6] : out = 4'h6;
-            NUMBERS[7] : out = 4'h7;
-            NUMBERS[8] : out = 4'h8;
-            NUMBERS[9] : out = 4'h9; 
-            NUMBERS[10]: out = 4'hA; 
-            NUMBERS[11]: out = 4'hB; 
-            NUMBERS[12]: out = 4'hC; 
-            NUMBERS[13]: out = 4'hD; 
-            NUMBERS[14]: out = 4'hE; 
-            NUMBERS[15]: out = 4'hF;
-            ENTER_CODE: out = 0;
-            default: out = 0;
-     endcase
+always@(posedge clk) begin
+    if(reset)
+        key_release <= 0;
+    else
+        key_release <= new_key_release;
 end
 
-always@(keycode)
-begin  
-    case(keycode)
-        NUMBERS[0],  NUMBERS[1],  NUMBERS[2],  NUMBERS[3],  
-        NUMBERS[4],  NUMBERS[5],  NUMBERS[6],  NUMBERS[7],
-        NUMBERS[8],  NUMBERS[9],  NUMBERS[10], NUMBERS[11],
-        NUMBERS[12], NUMBERS[13], NUMBERS[14], NUMBERS[15]:
-            flags <= 1 << NUMBER_F;
-        ENTER_CODE:
-            flags <= 1 << ENTER_F;
-        default:
-            flags <= 0;
-    endcase
+always@* begin
+    if(valid_in && keycode == 8'hf0)
+        new_key_release <= 1;
+    else begin
+        if(valid_in && keycode != 8'hf0)
+            new_key_release <= 0;
+        else
+            new_key_release <= key_release;
+    end
+end
+
+always@(posedge clk) begin
+    if(valid_in && key_release)
+        case(keycode)
+            8'h45: begin out = 4'h0; valid_out <= 1; enter_release <= 0; end
+            8'h16: begin out = 4'h1; valid_out <= 1; enter_release <= 0; end
+            8'h1E: begin out = 4'h2; valid_out <= 1; enter_release <= 0; end
+            8'h26: begin out = 4'h3; valid_out <= 1; enter_release <= 0; end
+            8'h25: begin out = 4'h4; valid_out <= 1; enter_release <= 0; end
+            8'h2E: begin out = 4'h5; valid_out <= 1; enter_release <= 0; end
+            8'h36: begin out = 4'h6; valid_out <= 1; enter_release <= 0; end
+            8'h3D: begin out = 4'h7; valid_out <= 1; enter_release <= 0; end
+            8'h3E: begin out = 4'h8; valid_out <= 1; enter_release <= 0; end
+            8'h46: begin out = 4'h9; valid_out <= 1; enter_release <= 0; end
+            8'h1C: begin out = 4'hA; valid_out <= 1; enter_release <= 0; end
+            8'h32: begin out = 4'hB; valid_out <= 1; enter_release <= 0; end
+            8'h21: begin out = 4'hC; valid_out <= 1; enter_release <= 0; end
+            8'h23: begin out = 4'hD; valid_out <= 1; enter_release <= 0; end
+            8'h24: begin out = 4'hE; valid_out <= 1; enter_release <= 0; end
+            8'h2B: begin out = 4'hF; valid_out <= 1; enter_release <= 0; end
+            ENTER_CODE: begin out = 4'h0; valid_out <= 1; enter_release <= 1; end
+            default: 
+            begin out = 4'h0; valid_out <= 0; enter_release <= 0; end
+         endcase
+     else begin out = 4'h0; valid_out <= 0; enter_release <= 0; end
 end
 
 endmodule

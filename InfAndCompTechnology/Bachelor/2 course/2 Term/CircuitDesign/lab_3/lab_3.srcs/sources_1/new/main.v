@@ -23,9 +23,8 @@ FILTER cpu_reset_filter(
     .OUT_SIGNAL_ENABLE(cpu_reset_out_enable)
 );
 
-wire [7:0] ps2_data_compl = 0;
+wire [9:0] ps2_data_compl = 0;
 wire ps2_data_ex = 0;
-wire [1:0] flags = 0;
 
 PS2_manager ps_2(
     .clk(clk),
@@ -41,7 +40,7 @@ wire [2:0] ERROR;
 
 Division del(
     .clk(clk),
-    .R_I(flags[1]),
+    .R_I(ps2_data_ex),
     .reset(cpu_reset_out_enable),
     .dataIn(ps2_data_compl),
     .R_O(LED),

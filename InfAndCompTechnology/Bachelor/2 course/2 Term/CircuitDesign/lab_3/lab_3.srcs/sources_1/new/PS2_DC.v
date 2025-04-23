@@ -12,7 +12,7 @@ parameter [7:0] ENTER_CODE = 8'h5A;
 
 initial begin 
     out = 0;
-    key_release = 0;
+    key_release = 1;
     valid_out = 0;
     enter_release = 0;
 end
@@ -27,17 +27,16 @@ end
 always@* begin
     if(valid_in && keycode == 8'hf0)
         new_key_release <= 1;
-    else new_key_release <= 0;
-    /*
-    if(valid_in && keycode != 8'hf0)
-        new_key_release <= 0;
-    else
-        new_key_release <= key_release;
-    */
+    else begin
+        if(valid_in && keycode != 8'hf0)
+            new_key_release <= 0;
+        else
+            new_key_release <= key_release;
+    end
 end
 
 always@(posedge clk) begin
-    if(valid_in && !key_release)
+    if(valid_in && key_release)
         case(keycode)
             8'h45: begin out = 4'h0; valid_out <= 1; enter_release <= 0; end
             8'h16: begin out = 4'h1; valid_out <= 1; enter_release <= 0; end

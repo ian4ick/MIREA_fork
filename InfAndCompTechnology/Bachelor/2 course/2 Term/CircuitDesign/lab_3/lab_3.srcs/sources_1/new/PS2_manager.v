@@ -6,18 +6,17 @@ module PS2_manager(
     input reset,
     
     output reg R_O,
-    output reg [7:0] out
+    output reg [9:0] out
 );
-parameter WAIT_ONE = 0, WAIT_ZERO = 1;
-reg state;
-reg release_flag;
+reg conf;
 wire release_dc, dc_valid, enter_dc;
 wire PS2_out_valid; 
 wire [7:0] PS2_out;
 
 initial begin
-    state = 0; R_O = 0;
-    release_flag = 0;
+    out = 0;
+    R_O = 0;
+    conf = 0;
 end
 
 PS2_design ps2(
@@ -29,7 +28,7 @@ PS2_design ps2(
     .valid_out(PS2_out_valid)
 );
 
-reg [7:0] out_gen = 0;
+reg [9:0] out_gen = 0;
 wire [3:0] out_dc;
 
 PS2_DC dc(
@@ -38,15 +37,17 @@ PS2_DC dc(
     .key_release(release_dc), .valid_out(dc_valid), .enter_release(enter_dc)
 );
 
-always@* begin
+always@(posedge clk) begin
+    conf <= dc_valid && enter_dc;
     if (dc_valid) begin
-        if (release_dc || enter_dc)
+        if (enter_dc)
+            out_gen <= 0;
+        else begin
             if (release_dc)
                 out_gen <= out_gen;
-            else 
-                out_gen <= 0;
-        else
-            out_gen <= {out_gen[3:0], out_dc};
+            else
+                out_gen <= {2'b00, out_gen[3:0], out_dc};
+        end
     end
     else
         out_gen <= out_gen;
@@ -54,10 +55,7 @@ end
 
 always@* begin
     out <= out_gen;
-    if (dc_valid)
-        R_O <= 1;
-    else
-        R_O <= 0;
+    R_O <= conf;
 end
 
 endmodule

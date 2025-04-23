@@ -38,27 +38,27 @@ end
 always@(posedge clk) begin
     if(valid_in && key_release)
         case(keycode)
-            8'h45: begin out = 4'h0; valid_out <= 1; enter_release <= 0; end
-            8'h16: begin out = 4'h1; valid_out <= 1; enter_release <= 0; end
-            8'h1E: begin out = 4'h2; valid_out <= 1; enter_release <= 0; end
-            8'h26: begin out = 4'h3; valid_out <= 1; enter_release <= 0; end
-            8'h25: begin out = 4'h4; valid_out <= 1; enter_release <= 0; end
-            8'h2E: begin out = 4'h5; valid_out <= 1; enter_release <= 0; end
-            8'h36: begin out = 4'h6; valid_out <= 1; enter_release <= 0; end
-            8'h3D: begin out = 4'h7; valid_out <= 1; enter_release <= 0; end
-            8'h3E: begin out = 4'h8; valid_out <= 1; enter_release <= 0; end
-            8'h46: begin out = 4'h9; valid_out <= 1; enter_release <= 0; end
-            8'h1C: begin out = 4'hA; valid_out <= 1; enter_release <= 0; end
-            8'h32: begin out = 4'hB; valid_out <= 1; enter_release <= 0; end
-            8'h21: begin out = 4'hC; valid_out <= 1; enter_release <= 0; end
-            8'h23: begin out = 4'hD; valid_out <= 1; enter_release <= 0; end
-            8'h24: begin out = 4'hE; valid_out <= 1; enter_release <= 0; end
-            8'h2B: begin out = 4'hF; valid_out <= 1; enter_release <= 0; end
-            ENTER_CODE: begin out = 4'h0; valid_out <= 1; enter_release <= 1; end
+            8'h45: begin out <= 4'h0; valid_out <= 1; enter_release <= 0; end
+            8'h16: begin out <= 4'h1; valid_out <= 1; enter_release <= 0; end
+            8'h1E: begin out <= 4'h2; valid_out <= 1; enter_release <= 0; end
+            8'h26: begin out <= 4'h3; valid_out <= 1; enter_release <= 0; end
+            8'h25: begin out <= 4'h4; valid_out <= 1; enter_release <= 0; end
+            8'h2E: begin out <= 4'h5; valid_out <= 1; enter_release <= 0; end
+            8'h36: begin out <= 4'h6; valid_out <= 1; enter_release <= 0; end
+            8'h3D: begin out <= 4'h7; valid_out <= 1; enter_release <= 0; end
+            8'h3E: begin out <= 4'h8; valid_out <= 1; enter_release <= 0; end
+            8'h46: begin out <= 4'h9; valid_out <= 1; enter_release <= 0; end
+            8'h1C: begin out <= 4'hA; valid_out <= 1; enter_release <= 0; end
+            8'h32: begin out <= 4'hB; valid_out <= 1; enter_release <= 0; end
+            8'h21: begin out <= 4'hC; valid_out <= 1; enter_release <= 0; end
+            8'h23: begin out <= 4'hD; valid_out <= 1; enter_release <= 0; end
+            8'h24: begin out <= 4'hE; valid_out <= 1; enter_release <= 0; end
+            8'h2B: begin out <= 4'hF; valid_out <= 1; enter_release <= 0; end
+            ENTER_CODE: begin out <= 4'h0; valid_out <= 1; enter_release <= 1; end
             default: 
-            begin out = 4'h0; valid_out <= 0; enter_release <= 0; end
+            begin out <= 4'h0; valid_out <= 0; enter_release <= 0; end
          endcase
-     else begin out = 4'h0; valid_out <= 0; enter_release <= 0; end
+     else begin out <= 4'h0; valid_out <= 0; enter_release <= 0; end
 end
 
 endmodule

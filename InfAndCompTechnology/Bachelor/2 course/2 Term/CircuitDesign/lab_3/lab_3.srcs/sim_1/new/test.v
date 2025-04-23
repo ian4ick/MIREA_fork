@@ -132,9 +132,9 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #10;
+        #100;
         pclk = 0;
-        #10;
+        #100;
         pclk = 1;
     end
     
@@ -241,8 +241,221 @@ initial begin
         #10;
         pclk = 1;
     end
-    
     #1000;
+    reset = 1;
+    #200;
+    reset = 0;
+    #200;
+    // Second testcase
+    // 5 / 0, expected Err: 1
+    num = NUMBERS[5];
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = ENTER_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #100;
+        pclk = 0;
+        #100;
+        pclk = 1;
+    end
+    
+    num = NUMBERS[0];
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = ENTER_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    #1000;
+    $finish;
 end
 
 reg [3:0] number;

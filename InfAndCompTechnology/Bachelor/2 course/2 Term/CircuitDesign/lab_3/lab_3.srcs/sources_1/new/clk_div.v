@@ -4,11 +4,12 @@ module clk_div(
     output reg clk_div
 );
 
-reg[15:0] clk_counter; 
+reg[15:0] clk_counter = 0; 
+initial clk_div = 0;
 
 always@ (posedge clk)
 begin
-if (clk_counter >= (2**10 - 1) >> 1)
+if (clk_counter >= (2**1 - 1) >> 1)
     begin
         clk_counter <= 0;
         clk_div <= ~clk_div;

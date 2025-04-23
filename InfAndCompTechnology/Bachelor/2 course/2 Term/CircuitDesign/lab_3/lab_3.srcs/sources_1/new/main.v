@@ -23,8 +23,13 @@ FILTER cpu_reset_filter(
     .OUT_SIGNAL_ENABLE(cpu_reset_out_enable)
 );
 
-wire [9:0] ps2_data_compl = 0;
-wire ps2_data_ex = 0;
+wire [9:0] ps2_data_compl;
+reg [9:0] delay_data;
+wire ps2_data_ex;
+always @(posedge clk)
+begin
+    delay_data <= ps2_data_compl;
+end
 
 PS2_manager ps_2(
     .clk(clk),
@@ -42,7 +47,7 @@ Division del(
     .clk(clk),
     .R_I(ps2_data_ex),
     .reset(cpu_reset_out_enable),
-    .dataIn(ps2_data_compl),
+    .dataIn(delay_data),
     .R_O(LED),
     .Res(chastnoe),
     .Remains(ostatok),
@@ -58,7 +63,7 @@ clk_div clk_div1(
 SevenSegmentLED seg(
     .clk(clk_div_out),
     .RESET(cpu_reset_out_enable),
-    .NUMBER({chastnoe,4'b0,ostatok,5'b0,ERROR,2'b0, ps2_data_compl}),
+    .NUMBER({chastnoe,4'b0,ostatok,5'b0,ERROR,2'b0, delay_data}),
     .AN_MASK({8'b01010100}),
     .AN(AN),
     .SEG(SEG)

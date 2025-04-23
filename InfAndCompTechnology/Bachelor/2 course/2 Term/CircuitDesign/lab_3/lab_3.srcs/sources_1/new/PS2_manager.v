@@ -30,30 +30,33 @@ PS2_design ps2(
 
 reg [9:0] out_gen = 0;
 wire [3:0] out_dc;
+reg [3:0] reg_dc;
 
 PS2_DC dc(
     .keycode(PS2_out), .clk(clk), .valid_in(PS2_out_valid), .reset(reset),
     .out(out_dc),
     .key_release(release_dc), .valid_out(dc_valid), .enter_release(enter_dc)
 );
-
-always@(posedge clk) begin
+always @* begin
+    reg_dc <= out_dc;
+end
+always @* begin
     conf <= dc_valid && enter_dc;
     if (dc_valid) begin
         if (enter_dc)
             out_gen <= 0;
         else begin
             if (release_dc)
-                out_gen <= out_gen;
+                out_gen <= out;
             else
-                out_gen <= {2'b00, out_gen[3:0], out_dc};
+                out_gen <= {2'b00, out[3:0], reg_dc};
         end
     end
     else
-        out_gen <= out_gen;
+        out_gen <= out;
 end
 
-always@* begin
+always@ (posedge clk) begin
     out <= out_gen;
     R_O <= conf;
 end

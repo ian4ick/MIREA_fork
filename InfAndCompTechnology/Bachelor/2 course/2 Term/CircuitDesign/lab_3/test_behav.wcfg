@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="7.612266 us"></ZoomEndTime>
+      <Cursor1Time time="10.040000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="340"></NameColumnWidth>
+      <ValueColumnWidth column_width="155"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/test/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/pclk" type="logic">
+      <obj_property name="ElementShortName">pclk</obj_property>
+      <obj_property name="ObjectShortName">pclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/pdata" type="logic">
+      <obj_property name="ElementShortName">pdata</obj_property>
+      <obj_property name="ObjectShortName">pdata</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/AN" type="array">
+      <obj_property name="ElementShortName">AN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">AN[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/SEG" type="array">
+      <obj_property name="ElementShortName">SEG[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SEG[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/i" type="array">
+      <obj_property name="ElementShortName">i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/LED" type="logic">
+      <obj_property name="ElementShortName">LED</obj_property>
+      <obj_property name="ObjectShortName">LED</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/num" type="array">
+      <obj_property name="ElementShortName">num[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/is_even" type="logic">
+      <obj_property name="ElementShortName">is_even</obj_property>
+      <obj_property name="ObjectShortName">is_even</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/NUMBERS" type="array">
+      <obj_property name="ElementShortName">NUMBERS[0:15][7:0]</obj_property>
+      <obj_property name="ObjectShortName">NUMBERS[0:15][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/number" type="array">
+      <obj_property name="ElementShortName">number[3:0]</obj_property>
+      <obj_property name="ObjectShortName">number[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/numbers" type="array">
+      <obj_property name="ElementShortName">numbers[31:0]</obj_property>
+      <obj_property name="ObjectShortName">numbers[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/ENTER_CODE" type="array">
+      <obj_property name="ElementShortName">ENTER_CODE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ENTER_CODE[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/UNPRESS_CODE" type="array">
+      <obj_property name="ElementShortName">UNPRESS_CODE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">UNPRESS_CODE[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/ps2_data_compl" type="array">
+      <obj_property name="ElementShortName">ps2_data_compl[9:0]</obj_property>
+      <obj_property name="ObjectShortName">ps2_data_compl[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/ps2_data_ex" type="logic">
+      <obj_property name="ElementShortName">ps2_data_ex</obj_property>
+      <obj_property name="ObjectShortName">ps2_data_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/ps_2/out" type="array">
+      <obj_property name="ElementShortName">out[9:0]</obj_property>
+      <obj_property name="ObjectShortName">out[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/ps_2/out_dc" type="array">
+      <obj_property name="ElementShortName">out_dc[3:0]</obj_property>
+      <obj_property name="ObjectShortName">out_dc[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/chastnoe" type="array">
+      <obj_property name="ElementShortName">chastnoe[3:0]</obj_property>
+      <obj_property name="ObjectShortName">chastnoe[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/ostatok" type="array">
+      <obj_property name="ElementShortName">ostatok[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ostatok[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/del/REG_Divisible" type="array">
+      <obj_property name="ElementShortName">REG_Divisible[0:9]</obj_property>
+      <obj_property name="ObjectShortName">REG_Divisible[0:9]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/del/REG_Divider" type="array">
+      <obj_property name="ElementShortName">REG_Divider[0:9]</obj_property>
+      <obj_property name="ObjectShortName">REG_Divider[0:9]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/del/REG_Res" type="array">
+      <obj_property name="ElementShortName">REG_Res[0:9]</obj_property>
+      <obj_property name="ObjectShortName">REG_Res[0:9]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/del/REG_Remains" type="array">
+      <obj_property name="ElementShortName">REG_Remains[0:9]</obj_property>
+      <obj_property name="ObjectShortName">REG_Remains[0:9]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/m/del/dataIn" type="array">
+      <obj_property name="ElementShortName">dataIn[9:0]</obj_property>
+      <obj_property name="ObjectShortName">dataIn[9:0]</obj_property>
+   </wvobject>
+</wave_config>

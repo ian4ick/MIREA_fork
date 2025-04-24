@@ -12,6 +12,7 @@ reg is_even;
 reg [7:0] NUMBERS [0:15];
 parameter [7:0] ENTER_CODE = 8'h5A;
 parameter [7:0] UNPRESS_CODE = 8'hF0;
+parameter [7:0] ESC_CODE = 8'h76;
 initial begin 
     NUMBERS[0] = 8'h45; 
     NUMBERS[1] = 8'h16;
@@ -132,9 +133,9 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #100;
+        #10;
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
     end
     
@@ -242,10 +243,66 @@ initial begin
         pclk = 1;
     end
     #1000;
-    reset = 1;
-    #200;
-    reset = 0;
-    #200;
+    
+    //Reset
+    
+    num = ESC_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    
+    num = UNPRESS_CODE;
+    is_even = 1;
+    #10;
+    for (i=0; i<11; i=i+1)
+    begin
+        case(i)
+            0: begin
+                pdata = 0;
+            end
+            1,2,3,4,5,6,7,8: begin
+                pdata = num[i-1];
+                is_even = is_even + num[i-1];
+            end
+            9: begin
+                pdata = is_even;
+            end
+            10: begin
+                pdata = 1;
+            end
+        endcase
+        #10;
+        pclk = 0;
+        #10;
+        pclk = 1;
+    end
+    #1000;
+    
+    //reset = 1;
+    //#200;
+    //reset = 0;
+    //#200;
     // Second testcase
     // 5 / 0, expected Err: 1
     num = NUMBERS[5];
@@ -345,9 +402,9 @@ initial begin
                 pdata = 1;
             end
         endcase
-        #100;
+        #10;
         pclk = 0;
-        #100;
+        #10;
         pclk = 1;
     end
     
@@ -503,7 +560,6 @@ main m(
     .clk(clk),
     .PS_2_clk(pclk),
     .PS_2_data(pdata),
-    .reset(reset),
     .AN(AN),
     .SEG(SEG),
     .LED(LED)

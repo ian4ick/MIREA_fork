@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -85,12 +86,12 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
+  {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/DIVIDER.v}
   {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/Division.v}
   {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/PS2_DC.v}
   {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/PS2_design.v}
   {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/PS2_manager.v}
   {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/SevenSegmentLED.v}
-  {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/clk_div.v}
   {D:/study/MIREA_fork/InfAndCompTechnology/Bachelor/2 course/2 Term/CircuitDesign/lab_3/lab_3.srcs/sources_1/new/main.v}
 }
 OPTRACE "Adding files" END { }

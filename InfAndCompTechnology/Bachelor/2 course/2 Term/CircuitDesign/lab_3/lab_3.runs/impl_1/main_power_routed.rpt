@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Thu Apr 24 16:31:25 2025
+| Date             : Thu Apr 24 19:00:57 2025
 | Host             : Lada-Home running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      291 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      132 |     63400 |            0.21 |
-|   Register     |    <0.001 |      105 |    126800 |            0.08 |
-|   CARRY4       |    <0.001 |        5 |     15850 |            0.03 |
+| Slice Logic    |    <0.001 |      311 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      135 |     63400 |            0.21 |
+|   Register     |    <0.001 |      118 |    126800 |            0.09 |
+|   CARRY4       |    <0.001 |        9 |     15850 |            0.06 |
 |   Others       |     0.000 |       15 |       --- |             --- |
-| Signals        |    <0.001 |      222 |       --- |             --- |
+| Signals        |    <0.001 |      244 |       --- |             --- |
 | I/O            |     0.018 |       19 |       210 |            9.05 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.117 |          |           |                 |

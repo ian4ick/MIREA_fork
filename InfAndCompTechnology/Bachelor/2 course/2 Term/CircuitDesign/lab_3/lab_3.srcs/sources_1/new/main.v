@@ -11,6 +11,7 @@ module main(
 wire [9:0] ps2_data_compl;
 reg [9:0] delay_data;
 wire ps2_data_ex, ps_reset;
+reg cpu_reset_out_enable = 0;
 always @(posedge clk)
 begin
     delay_data <= ps2_data_compl;

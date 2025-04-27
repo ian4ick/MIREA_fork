@@ -44,27 +44,25 @@ begin
 				bit_counter <= 0; 	
 				baud_counter <= 0;
 				UART_RX_Data_Out <= 0;
-		            UART_RX_Ready_Out <= 0;
+		        UART_RX_Ready_Out <= 0;
 				state <= WAIT_START_BIT;
 			end
-					
 		WAIT_START_BIT: // Состояние ожидания прихода стартового бита (стартовый бит всегда равен нулю)
 			// Если пришёл стартовый бит (равный 0),
 			// автомат выходит из простоя и начинает работу с пакетом 
 			if (~major_out)
                 state <= LOAD_BIT;
-				
 		LOAD_BIT: // Состояние загрузки очередного бита
 			// Считывание очередного бита производится только в середине
 			// такта BAUD_RATE для повышения надёжности передачи данных
-			if (baud_flag) 
+			if (baud_flag) begin
 				// Ожидаем прихода стоп-бита
 				if (bit_counter == 9)
 					begin
 						// Если пришёл стоп-бит (равный 1)
 						if (rx) 
 							UART_RX_Ready_Out <= 1; // Ставим в 1-цу флаг о том, что пакет принят
-							
+						else UART_RX_Ready_Out <= UART_RX_Ready_Out;
 						// Если стоп-бит не пришёл, также уходим в сброс, однако флаг сигнализирует, 
 						// что пакет не был принят, т.е. входные данные этого пакета игнорируются
 						state <= RESET;
@@ -74,15 +72,16 @@ begin
 				    begin 
 					    if (bit_counter != 0) // бит по счёту - не стартовый (данный бит не несёт информацию, а лишь ограничивает пакет)
                             UART_RX_Data_Out <= {major_out, UART_RX_Data_Out[7:1]};
-					    
+					    else UART_RX_Data_Out <= UART_RX_Data_Out;
 					    bit_counter <= bit_counter + 1; // счётчик битов увеличивается на 1-цу
 						state <= WAIT_HALF_RATE;			
-					end	
-					
+					end
+            end
 		WAIT_HALF_RATE: // Производится простой автомата до конца такта BAUD_RATE
 			// Когда прождали, переходим к загрузке следующего бита
 			if (baud_flag)
 				state <= LOAD_BIT;
+			else state <= state;
 	endcase
 	
 	// Когда дошли до границы BAUD_RATE

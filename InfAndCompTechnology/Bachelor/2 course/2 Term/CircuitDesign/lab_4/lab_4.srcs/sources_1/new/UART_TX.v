@@ -38,11 +38,9 @@ begin
 				bit_counter <= 0;
 				baud_counter <= 0;
 				tx <= 1;
-				
 				idle <= 1;
 				state <= WAIT_READY_IN;
 			end
-			
 		WAIT_READY_IN: // ќжидание прихода очередного пакета данных
             if (UART_TX_Ready_In) 
                 begin

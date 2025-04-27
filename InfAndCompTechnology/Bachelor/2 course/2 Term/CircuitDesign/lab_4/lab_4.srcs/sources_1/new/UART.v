@@ -3,7 +3,7 @@ module UART#
 (
     localparam CLOCK_RATE = 100_000_000, // Частота ПЛИС XC7A100T-1CSG324 семейства Artix-7 (в Гц)
     localparam BAUD_RATE = 9600,	// Скорость передачи данных по UART (в бод)
-    localparam ERROR_COUNT = 3, // Количество возможных ошибок основного автомата
+    localparam ERROR_COUNT = 1, // Количество возможных ошибок основного автомата
     localparam DIGIT_COUNT = 4 // Разрядность входных данных, представленных в 16-ричном виде
 )
 (

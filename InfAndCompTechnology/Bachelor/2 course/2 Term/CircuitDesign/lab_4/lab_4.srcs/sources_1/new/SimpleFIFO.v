@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 module SimpleFIFO #(
 	MEM_SIZE = 6,	
     DATA_SIZE = 4
@@ -46,7 +47,7 @@ begin
 	for(i = 0; i < MEM_SIZE; i = i + 1)
 		mem[i] <= {DATA_SIZE{1'b0}};
 end
-// Чтение
+
 always@(posedge clk)
 	if (enable && read_mode && !empty)
 	begin
@@ -55,13 +56,11 @@ always@(posedge clk)
     end
     else 
         valid <= 0;
-    
-// Запись        
+
 always@(posedge clk)
     if (enable && write_mode && !full)        
         mem[write_pointer] <= data_in;
 
-// Сброс/установка следующих значений
 always @(posedge clk) begin
     if (reset)
         begin
@@ -78,8 +77,7 @@ always @(posedge clk) begin
 			empty <= empty_next;	
         end
 end 
-       
-// Логика формирования следующих значений
+
 always @*
 begin
     write_pointer_succ = (write_pointer + 1) % MEM_SIZE;
@@ -106,7 +104,7 @@ begin
                     empty_next = 0;
                     if (write_pointer_succ == read_pointer)
                         full_next = 1;
-                end
+                end      
         2'b11:
             begin
             case ({full, empty})

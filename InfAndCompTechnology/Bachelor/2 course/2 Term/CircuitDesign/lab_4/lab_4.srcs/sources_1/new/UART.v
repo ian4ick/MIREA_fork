@@ -1,51 +1,107 @@
-`timescale 1ns / 1ps
-module UART#
+`timescale 1ns / 1ns
+
+module UART #
 (
-    localparam CLOCK_RATE = 100_000_000, // Частота ПЛИС XC7A100T-1CSG324 семейства Artix-7 (в Гц)
-    localparam BAUD_RATE = 9600,	// Скорость передачи данных по UART (в бод)
-    localparam ERROR_COUNT = 1, // Количество возможных ошибок основного автомата
-    localparam DIGIT_COUNT = 4 // Разрядность входных данных, представленных в 16-ричном виде
+    localparam CLOCK_RATE = 100_000_000,
+    localparam BAUD_RATE = 9600,
+    localparam DIGIT_COUNT = 4
 )
 (
-	input clk,		// Синхросигнал
-	input RsRx,	 	// Бит принимаемых данных (UART_RX)
-	output RsTx 	// Бит отправляемых данных (UART_TX)	
+	input clk,
+	input RsRx,
+	output RsTx,
+	
+	output [7:0] AN, [6:0] SEG,
+	output DONE,
+    output LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8,
+    output LED9, LED10, LED11, LED12, LED13, LED14, LED15
 );
 
-// FSM
-wire [15:0] FSM_Data_Input;	  // Шина входных данных автомата
-wire FSM_Ready_Input;		  // Сигнал о том, что данные на входе автомата сформированы
-wire FSM_Ready_Output;		  // Сигнал о том, что данные на выходе автомата сформированы
-wire [15:0] FSM_Data_Output;  // Шина выходных данных автомата
-wire [1:0] FSM_Error_Output;  // Шина ошибок на выходе автомата
-wire reset = 1'b0;
+wire [7:0] element;
+wire signed [7:0] answ;
+wire Ready_Input, Ready_Output;
+wire reset = 1'b1;
 
-// Автомат, занимающийся менеджментом входных данных с UART
+reg [7:0] out_test;
+
+always @(posedge clk)
+begin
+    if (answ == 0)
+        out_test <= element;
+    else
+        out_test <= answ;
+end
+
 UART_Input_Manager #(.DIGIT_COUNT(DIGIT_COUNT)) uart_input_manager 
 (
-	.clk(clk), 		// Вход синхросигнала
+	.clk(clk),
 	.reset(reset),
 	.RsRx(RsRx),
-	.out(FSM_Data_Input),// Выход со значением для входа основного автомата
-	.ready_out(FSM_Ready_Input)	// Выход - сигнал о том, что данные на выходе <number_out> сформированы
+	.out(element),
+	.ready_out(Ready_Input)
 );
-// Автомат, занимающийся менеджментом выходных данных на UART
-UART_Output_Manager #(.ERROR_COUNT(ERROR_COUNT)) uart_output_manager 
+
+UART_Output_Manager uart_output_manager 
 (
-	.clk(clk), // Вход: Синхросигнал
+	.clk(clk),
 	.reset(reset),
-	.ready_in(FSM_Ready_Output), // Вход: сигнал о том, что данные для отправки по UART сформированы
-	.data_in(FSM_Data_Output),   // Вход: данные для отправки по UART
-	.error_in(FSM_Error_Output), // Вход: данные об ошибках для отправки по UART
+	.ready_in(Ready_Output),
+	.data_in(answ),
 	.RsTx(RsTx)
 );
-fsm #(16) FSM(
-	.clk(clk),
-	.R_I(FSM_Ready_Input),
-	.reset(0),
-	.R_O(FSM_Ready_Output),
-	.dataIn(FSM_Data_Input),
-	.dataOut(FSM_Data_Output),
-	.error(FSM_Error_Output)
+
+bucket_sort sorter (
+    .clk(clk),
+    .data_in(element),
+    .R_I(Ready_Input),
+    .R_O(Ready_Output),
+    .reset(1'b0),
+    .done(DONE),
+    .led1(LED1),
+    .led2(LED2),
+    .led3(LED3),
+    .led4(LED4),
+    .led5(LED5),
+    .led6(LED6),
+    .led7(LED7),
+    .led8(LED8),
+    .led9(LED9),
+    .led10(LED10),
+    .led11(LED11),
+    .led12(LED12),
+    .led13(LED13),
+    .led14(LED14),
+    .led15(LED15),
+    .data_out(answ)
 );
+
+reg [31:0] shift_reg;
+reg [7:0] an_mask;
+
+initial
+begin
+    shift_reg = 0;
+    an_mask <= 8'b11111111;
+end
+
+always@* begin
+    shift_reg <= {24'h0, out_test};
+    an_mask <= 8'hf0;
+end
+
+wire clk_div_out;
+divider #(.divisor(8000)) divide_clk (
+    .clk(clk),
+    .divided_clk(clk_div_out)
+);
+
+Seven_Segment_LED segments (
+    .clk(clk_div_out),
+    .RESET(~reset),
+    .NUMBER(shift_reg),
+    .ANOD_MASK(an_mask),
+    .ANOD(AN),
+    .SEGMENT(SEG)
+);
+
 endmodule

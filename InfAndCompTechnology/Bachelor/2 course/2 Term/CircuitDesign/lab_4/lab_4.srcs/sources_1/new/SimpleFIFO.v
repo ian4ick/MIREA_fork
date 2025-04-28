@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module SimpleFIFO #(
-	MEM_SIZE = 6,	
+	MEM_SIZE = 6,
     DATA_SIZE = 4
 )
 (

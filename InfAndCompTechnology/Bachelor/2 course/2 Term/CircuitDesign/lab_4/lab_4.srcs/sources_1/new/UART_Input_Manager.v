@@ -15,6 +15,8 @@ module UART_Input_Manager #
 	output reg ready_out
 );
 
+reg reset_in;
+
 wire UART_RX_Ready_Out;
 wire [7:0] UART_RX_Data_Out;
 localparam RX_DATA_SIZE = 8;
@@ -47,7 +49,7 @@ SimpleFIFO #(
     .DATA_SIZE(FIFO_DATA_SIZE)
 ) 
 simpleFIFO(
-    .reset(reset),
+    .reset(reset_in),
     .clk(clk),
     .enable(1'b1),
     .read_mode(FIFO_read_mode),
@@ -68,11 +70,12 @@ reg FIFO_ready_out = 0;
 
 always@(posedge clk)
 begin
-    if (reset)
+    if (reset_in)
         begin
             ready_out <= 0;
             out <= 0;        
             FIFO_read_mode <= 1;
+            reset_in <= 0;
         end
     else
         begin
@@ -99,6 +102,7 @@ begin
     FIFO_read_mode <= 1;
 	out <= 0;
 	ready_out <= 0;
+	reset_in <= reset;
 end
 
 endmodule

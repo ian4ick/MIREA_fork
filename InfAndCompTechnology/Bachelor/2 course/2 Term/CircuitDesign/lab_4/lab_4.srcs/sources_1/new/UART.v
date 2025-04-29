@@ -18,9 +18,9 @@ module UART #
 );
 
 wire [7:0] element;
-wire signed [7:0] answ;
+wire [7:0] answ;
 wire Ready_Input, Ready_Output;
-wire reset = 1'b1;
+wire reset = 1'b0;
 
 reg [7:0] out_test;
 
